@@ -5,7 +5,7 @@ import colors from "../../config/colors";
 // Styles
 const Button = styled.TouchableOpacity`
   height: 40px;
-  background-color: ${colors.GreyLight};
+  background-color: ${colors.GreyExtraLight};
   padding: 0 20px;
   border-radius: 20px;
   justify-content: center;
