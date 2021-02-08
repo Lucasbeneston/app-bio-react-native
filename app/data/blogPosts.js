@@ -7,6 +7,8 @@ export default [
     abstract:
       "Suivre un régime détox ne débarrasse pas uniquement votre corps des toxines. Un régime adéquat permet également d’améliorer votre santé physique et mentale. De quoi gagner une nouvelle énergie !",
     publication: "08/02/2021",
+    text:
+      "Les régimes détox sont plus populaires que jamais. D’ailleurs, il est devenu très facile de retrouver un programme détox qui conviendra aux besoins spécifiques de chacun. L’objectif reste ici de détoxifier le sang et d’éliminer toutes les toxines qui se sont accumulées dans l’organisme. Cependant, les explications ne sont pas toujours claires. Comment fonctionne une cure détox ? Comment y procéder pour en tirer les meilleurs bénéfices ? Quels sont les aliments à privilégier pour un régime efficace ? Voyons tout cela plus en détail.",
   },
   {
     category: "Cuisine",

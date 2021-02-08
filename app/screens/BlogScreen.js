@@ -31,6 +31,8 @@ export default function BlogScreen({ navigation }) {
                 illustrationSrc: post.illustrationSrc,
                 title: post.title,
                 publication: post.publication,
+                abstract: post.abstract,
+                text: post.text,
               })
             }
             key={post.title}
