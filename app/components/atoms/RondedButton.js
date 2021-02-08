@@ -13,9 +13,9 @@ const Button = styled.TouchableOpacity`
   justify-content: center;
 `;
 
-export default function RondedButton({ ioniconName }) {
+export default function RondedButton({ onPress, ioniconName }) {
   return (
-    <Button>
+    <Button onPress={onPress}>
       <Ionicons name={ioniconName} size={20} color="white" />
     </Button>
   );

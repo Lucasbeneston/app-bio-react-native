@@ -4,13 +4,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import colors from "../config/colors";
 
 // Screens
+import BlogStackScreen from "./StackNavigation";
 import ShoppingScreen from "../screens/ShoppingScreen";
-import BlogScreen from "../screens/BlogScreen";
 import MembershipScreen from "../screens/MembershipScreen";
 
 // Components
 import MembershipButton from "../components/atoms/MembershipButton";
 
+// TAB Navigation
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
   return (
@@ -31,7 +32,7 @@ export default function TabNavigation() {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Blog" component={BlogScreen} />
+      <Tab.Screen name="Blog" component={BlogStackScreen} />
       <Tab.Screen
         name="Membership"
         component={MembershipScreen}

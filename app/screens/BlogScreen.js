@@ -13,19 +13,27 @@ const Container = styled.SafeAreaView`
   height: 100%;
   width: 100%;
 `;
-
 const ScrollViewItems = styled.ScrollView`
   margin-top: 5%;
   padding: 0 5%;
 `;
 
-export default function BlogScreen() {
+export default function BlogScreen({ navigation }) {
   return (
     <Container>
       <TopBar />
       <ScrollViewItems>
         {blogPosts.map((post) => (
           <BlogPost
+            onPress={() =>
+              navigation.navigate("PostDetails", {
+                category: post.category,
+                illustrationSrc: post.illustrationSrc,
+                title: post.title,
+                publication: post.publication,
+              })
+            }
+            key={post.title}
             category={post.category}
             illustrationSrc={post.illustrationSrc}
             title={post.title}

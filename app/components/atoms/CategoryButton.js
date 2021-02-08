@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import colors from "../../config/colors";
 
 // Styles
-const Button = styled.TouchableOpacity`
+const Button = styled.TouchableHighlight`
   height: 40px;
   background-color: ${colors.GreyExtraLight};
   padding: 0 20px;

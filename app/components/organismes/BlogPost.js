@@ -3,10 +3,9 @@ import styled from "styled-components/native";
 import colors from "../../config/colors";
 
 // Styles
-const Post = styled.View`
+const Post = styled.TouchableOpacity`
   margin-bottom: 5%;
 `;
-
 const IllustrationContainer = styled.View`
   height: 150px;
   background-color: ${colors.BlueOxford};
@@ -20,7 +19,6 @@ const PostIllustration = styled.Image`
   border-radius: 15px;
   opacity: 0.9;
 `;
-
 const PostCategoryContainer = styled.View`
   position: absolute;
   background-color: ${colors.BlueKazidomi};
@@ -34,7 +32,6 @@ const PostCategory = styled.Text`
   color: white;
   font-weight: 500;
 `;
-
 const InformationContainer = styled.View`
   padding: 10px;
 `;
@@ -52,6 +49,7 @@ const PostPublicationDate = styled.Text`
 `;
 
 export default function BlogPost({
+  onPress,
   category,
   illustrationSrc,
   title,
@@ -59,7 +57,7 @@ export default function BlogPost({
   publication,
 }) {
   return (
-    <Post>
+    <Post onPress={onPress}>
       <IllustrationContainer>
         <PostIllustration source={{ uri: illustrationSrc }} />
         <PostCategoryContainer>

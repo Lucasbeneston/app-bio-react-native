@@ -15,8 +15,14 @@ const ButtonContainer = styled.View`
 export default function RondedButtonContainer() {
   return (
     <ButtonContainer>
-      <RondedButton ioniconName="grid-outline" />
-      <RondedButton ioniconName="search-outline" />
+      <RondedButton
+        onPress={() => alert("Press menu")}
+        ioniconName="grid-outline"
+      />
+      <RondedButton
+        onPress={() => alert("Press search")}
+        ioniconName="search-outline"
+      />
     </ButtonContainer>
   );
 }
