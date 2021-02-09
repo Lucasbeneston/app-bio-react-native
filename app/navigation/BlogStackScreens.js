@@ -9,7 +9,7 @@ const screenOptionStyle = {
   headerShown: false,
 };
 
-export default function BlogStackScreen() {
+export default function BlogStackScreens() {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="PostsList" component={BlogScreen} />

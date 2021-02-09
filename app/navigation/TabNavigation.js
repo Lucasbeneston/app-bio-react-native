@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import colors from "../config/colors";
 
 // Screens
-import BlogStackScreen from "./StackNavigation";
+import BlogStackScreens from "./BlogStackScreens";
 import ShoppingScreen from "../screens/ShoppingScreen";
 import MembershipScreen from "../screens/MembershipScreen";
 
@@ -32,7 +32,7 @@ export default function TabNavigation() {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Blog" component={BlogStackScreen} />
+      <Tab.Screen name="Blog" component={BlogStackScreens} />
       <Tab.Screen
         name="Membership"
         component={MembershipScreen}

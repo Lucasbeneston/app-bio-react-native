@@ -1,4 +1,5 @@
 import React from "react";
+import { View, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import colors from "../config/colors";
 
@@ -20,16 +21,24 @@ const PostIllustration = styled.Image`
   height: null;
   width: null;
   resize-mode: cover;
-  border-radius: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   opacity: 0.9;
+`;
+
+const ShareLikeContainer = styled.View`
+  flex-direction: row;
+  width: 90px;
+  justify-content: space-between;
 `;
 
 const ButtonsContainer = styled.SafeAreaView`
   position: absolute;
-  right: 5%;
+  width: 90%;
+  margin: 0 5%;
+  flex-direction: row;
+  justify-content: space-between;
 `;
-
-const ScrollSection = styled.ScrollView``;
 
 const InformationContainer = styled.View`
   padding: 5% 5% 10%;
@@ -42,10 +51,12 @@ const InformationsHeader = styled.View`
 `;
 
 const PostCategoryContainer = styled.View`
-  align-self: flex-start;
   background-color: ${colors.BlueOxford};
   padding: 5px 20px;
   border-radius: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
 `;
 const PostCategory = styled.Text`
   font-size: 14px;
@@ -62,6 +73,13 @@ const PostTitle = styled.Text`
 `;
 
 const PostAbstract = styled.Text`
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 25px;
+`;
+
+const PostText = styled.Text`
   margin-top: 20px;
   font-size: 16px;
   line-height: 25px;
@@ -85,21 +103,32 @@ export default function PostScreen({ route, navigation }) {
             onPress={() => navigation.goBack()}
             ioniconName="close-outline"
           />
+          <ShareLikeContainer>
+            <RondedButton
+              onPress={() => alert("Press share")}
+              ioniconName="share-outline"
+              color={colors.BlueOxford}
+            />
+            <RondedButton
+              onPress={() => alert("Press like")}
+              ioniconName="heart-outline"
+            />
+          </ShareLikeContainer>
         </ButtonsContainer>
+        <PostCategoryContainer>
+          <PostCategory>{category}</PostCategory>
+        </PostCategoryContainer>
       </IllustrationContainer>
-      <ScrollSection>
+      <ScrollView>
         <InformationContainer>
           <InformationsHeader>
-            <PostCategoryContainer>
-              <PostCategory>{category}</PostCategory>
-            </PostCategoryContainer>
             <PostPublicationDate>Publié le {publication}</PostPublicationDate>
           </InformationsHeader>
           <PostTitle>{title}</PostTitle>
           <PostAbstract>{abstract}</PostAbstract>
-          <PostAbstract>{text}</PostAbstract>
+          <PostText>{text}</PostText>
         </InformationContainer>
-      </ScrollSection>
+      </ScrollView>
     </>
   );
 }
