@@ -91,9 +91,7 @@ export default function Product({
   return (
     <Container>
       <IllustrationContainer>
-        <ProductIllustration
-          source={require("../../assets/products/creme-de-coco.png")}
-        />
+        <ProductIllustration source={illustration} />
       </IllustrationContainer>
       <InformationContainer>
         <Brand>{brand}</Brand>

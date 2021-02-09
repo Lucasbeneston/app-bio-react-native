@@ -54,6 +54,7 @@ export default function ShoppingScreen({ navigation }) {
             {shopProducts.map((product) => (
               <Product
                 key={product.name}
+                illustration={product.illustration}
                 brand={product.brand}
                 name={product.name}
                 quantity={product.quantity}
