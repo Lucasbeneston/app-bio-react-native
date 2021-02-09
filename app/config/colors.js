@@ -1,4 +1,5 @@
 export default {
+  BluePorcelain: "#daeaea",
   BlueKazidomi: "#00C0BC",
   BlueOxford: "#3D4B5C",
   GreyDark: "#404346",

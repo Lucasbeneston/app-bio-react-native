@@ -10,11 +10,22 @@ const TopBarContainer = styled.View`
   flex-direction: row;
 `;
 
-export default function TopBar() {
+export default function TopBar({
+  onPressSearch,
+  onPressMenu,
+  categoriesArray,
+  onPressCategory,
+}) {
   return (
     <TopBarContainer>
-      <RondedButtonContainer />
-      <CategoryScrollContainer />
+      <RondedButtonContainer
+        onPressSearch={onPressSearch}
+        onPressMenu={onPressMenu}
+      />
+      <CategoryScrollContainer
+        categoriesArray={categoriesArray}
+        onPressCategory={onPressCategory}
+      />
     </TopBarContainer>
   );
 }

@@ -5,7 +5,7 @@ import colors from "../../config/colors";
 // Styles
 const Button = styled.TouchableHighlight`
   height: 40px;
-  background-color: ${colors.GreyExtraLight};
+  background-color: ${colors.BluePorcelain};
   padding: 0 20px;
   border-radius: 20px;
   justify-content: center;
@@ -17,9 +17,9 @@ const Category = styled.Text`
   color: ${colors.BlueOxford};
 `;
 
-export default function CategoryButton({ name }) {
+export default function CategoryButton({ onPressCategory, name }) {
   return (
-    <Button>
+    <Button onPress={onPressCategory}>
       <Category>{name}</Category>
     </Button>
   );

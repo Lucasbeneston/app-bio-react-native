@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import BlogScreen from "../screens/BlogScreen";
-import PostScreen from "../screens/PostScreen";
+import BlogListScreen from "../screens/BlogListScreen";
+import BlogPostDetailsScreen from "../screens/BlogPostDetailsScreen";
 
 const Stack = createStackNavigator();
 const screenOptionStyle = {
@@ -12,8 +12,11 @@ const screenOptionStyle = {
 export default function BlogStackScreens() {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="PostsList" component={BlogScreen} />
-      <Stack.Screen name="PostDetails" component={PostScreen} />
+      <Stack.Screen name="BlogListScreen" component={BlogListScreen} />
+      <Stack.Screen
+        name="BlogPostDetailsScreen"
+        component={BlogPostDetailsScreen}
+      />
     </Stack.Navigator>
   );
 }

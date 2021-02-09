@@ -5,7 +5,7 @@ import colors from "../config/colors";
 
 // Screens
 import BlogStackScreens from "./BlogStackScreens";
-import ShoppingScreen from "../screens/ShoppingScreen";
+import ShoppingHomeScreen from "../screens/ShoppingHomeScreen";
 import MembershipScreen from "../screens/MembershipScreen";
 
 // Components
@@ -43,7 +43,7 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Shopping"
-        component={ShoppingScreen}
+        component={ShoppingHomeScreen}
         options={{ title: "Boutique" }}
       />
     </Tab.Navigator>

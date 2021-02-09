@@ -1,21 +1,22 @@
 import React from "react";
-import styled from "styled-components/native";
-
-// Data
-import blogCategories from "../../data/blogCategories";
+import { ScrollView } from "react-native";
 
 // Component
 import CategoryButton from "../atoms/CategoryButton";
 
-// Style
-const ScrollContainer = styled.ScrollView``;
-
-export default function CategoryScrollContainer() {
+export default function CategoryScrollContainer({
+  categoriesArray,
+  onPressCategory,
+}) {
   return (
-    <ScrollContainer horizontal={true} showsHorizontalScrollIndicator={false}>
-      {blogCategories.map((category) => (
-        <CategoryButton key={category} name={category} />
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      {categoriesArray.map((category) => (
+        <CategoryButton
+          key={category}
+          onPressCategory={onPressCategory}
+          name={category}
+        />
       ))}
-    </ScrollContainer>
+    </ScrollView>
   );
 }
