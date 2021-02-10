@@ -23,7 +23,6 @@ export default function ShoppingScreen({ navigation }) {
   return (
     <Container>
       <TopBar
-        onPressMenu={() => alert("Press Menu")}
         onPressSearch={() => alert("Press Search")}
         categoriesArray={shopCategories}
         onPressCategory={() => alert("Press category")}

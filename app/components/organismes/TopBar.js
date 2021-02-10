@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { SafeAreaView } from "react-native";
 import styled from "styled-components/native";
 
 // Components
 import CategoryScrollContainer from "../molecules/CategoryScrollContainer";
 import RondedButtonContainer from "../molecules/RondedButtonContainer";
+import Menu from "../molecules/Menu";
 
 // Style
 const TopBarContainer = styled.View`
@@ -12,20 +14,26 @@ const TopBarContainer = styled.View`
 
 export default function TopBar({
   onPressSearch,
-  onPressMenu,
   categoriesArray,
   onPressCategory,
 }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <TopBarContainer>
-      <RondedButtonContainer
-        onPressSearch={onPressSearch}
-        onPressMenu={onPressMenu}
-      />
-      <CategoryScrollContainer
-        categoriesArray={categoriesArray}
-        onPressCategory={onPressCategory}
-      />
-    </TopBarContainer>
+    <SafeAreaView>
+      <TopBarContainer>
+        <RondedButtonContainer
+          onPressSearch={onPressSearch}
+          onPressMenu={() => {
+            setOpen(!open);
+          }}
+        />
+        <CategoryScrollContainer
+          categoriesArray={categoriesArray}
+          onPressCategory={onPressCategory}
+        />
+      </TopBarContainer>
+      {open ? <Menu arrayCategories={categoriesArray} /> : null}
+    </SafeAreaView>
   );
 }

@@ -23,7 +23,6 @@ export default function BlogScreen({ navigation }) {
   return (
     <Container>
       <TopBar
-        onPressMenu={() => alert("Press Menu")}
         onPressSearch={() => alert("Press Search")}
         categoriesArray={blogCategories}
         onPressCategory={() => alert("Press category")}
