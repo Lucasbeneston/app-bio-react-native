@@ -1,8 +1,9 @@
 export default {
-  BluePorcelain: "#daeaea",
+  BluePorcelain: "#DAEAEA",
   BlueKazidomi: "#00C0BC",
   BlueOxford: "#3D4B5C",
   GreyDark: "#404346",
   GreyLight: "#9DA5AD",
-  GreyExtraLight: "#dcdbdf",
+  GreyExtraLight: "#E4E3E8",
+  BurningOrange: "#FD6D3F",
 };

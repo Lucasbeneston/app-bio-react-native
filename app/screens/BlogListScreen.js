@@ -29,26 +29,28 @@ export default function BlogScreen({ navigation }) {
         onPressCategory={() => alert("Press category")}
       />
       <ScrollViewItems>
-        {blogPosts.map((post) => (
-          <BlogPost
-            onPress={() =>
-              navigation.navigate("BlogPostDetailsScreen", {
-                category: post.category,
-                illustrationSrc: post.illustrationSrc,
-                title: post.title,
-                publication: post.publication,
-                abstract: post.abstract,
-                text: post.text,
-              })
-            }
-            key={post.title}
-            category={post.category}
-            illustrationSrc={post.illustrationSrc}
-            title={post.title}
-            abstract={post.abstract}
-            publication={post.publication}
-          />
-        ))}
+        {blogPosts
+          .map((post) => (
+            <BlogPost
+              onPress={() =>
+                navigation.navigate("BlogPostDetailsScreen", {
+                  category: post.category,
+                  illustrationSrc: post.illustrationSrc,
+                  title: post.title,
+                  publication: post.publication,
+                  abstract: post.abstract,
+                  text: post.text,
+                })
+              }
+              key={post.title}
+              category={post.category}
+              illustrationSrc={post.illustrationSrc}
+              title={post.title}
+              abstract={post.abstract}
+              publication={post.publication}
+            />
+          ))
+          .slice(0, 6)}
       </ScrollViewItems>
     </Container>
   );

@@ -23,4 +23,12 @@ export default [
     standardPrice: "7,96€",
     memberPrice: "6,77€",
   },
+  {
+    illustration: require("../assets/products/perles-en-ceramique-carafe-15-pieces.png"),
+    brand: "Les verts moutons",
+    name: "Perles en céramique Carafe",
+    quantity: "15 pièces",
+    standardPrice: "12,79€",
+    memberPrice: "10,23€",
+  },
 ];

@@ -57,7 +57,7 @@ export default function BlogPost({
   publication,
 }) {
   return (
-    <Post onPress={onPress}>
+    <Post onPress={onPress} activeOpacity={0.8}>
       <IllustrationContainer>
         <PostIllustration source={{ uri: illustrationSrc }} />
         <PostCategoryContainer>

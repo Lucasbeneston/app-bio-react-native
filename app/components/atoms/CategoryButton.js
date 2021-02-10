@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import colors from "../../config/colors";
 
 // Styles
-const Button = styled.TouchableHighlight`
+const Button = styled.TouchableOpacity`
   height: 40px;
   background-color: ${colors.BluePorcelain};
   padding: 0 20px;
@@ -19,7 +19,7 @@ const Category = styled.Text`
 
 export default function CategoryButton({ onPressCategory, name }) {
   return (
-    <Button onPress={onPressCategory}>
+    <Button onPress={onPressCategory} activeOpacity={0.8}>
       <Category>{name}</Category>
     </Button>
   );

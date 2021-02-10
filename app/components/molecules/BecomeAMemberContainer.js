@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
+import { color } from "react-native-reanimated";
 
 // Styles
 const Container = styled.View`
   background-color: ${colors.GreyExtraLight};
   border-radius: 20px;
   padding: 20px;
-  margin: 2.5% 5%;
+  margin: 2.5% 5% 10px;
 `;
 
 const Title = styled.Text`
@@ -25,6 +26,11 @@ const Informations = styled.Text`
   font-weight: 500;
 `;
 
+const Span = styled.Text`
+  color: ${(props) => props.textColor};
+  font-weight: 700;
+`;
+
 const Button = styled.TouchableOpacity`
   background-color: ${colors.BlueKazidomi};
   height: 50px;
@@ -36,7 +42,7 @@ const Button = styled.TouchableOpacity`
 
 const ButtonTitle = styled.Text`
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
 `;
 
@@ -46,7 +52,9 @@ export default function BecomeAMemberContainer({ onPress }) {
       <Title>Vivre sainement n'a jamais été aussi simple</Title>
       <DottedLine />
       <Informations>
-        Vos produits sains et biologiques préférés jusqu'à 50% moins chers
+        Vos produits <Span textColor={colors.BlueKazidomi}>sains</Span> et
+        biologiques préférés{" "}
+        <Span textColor={colors.BurningOrange}>jusqu'à 50% moins chers</Span>{" "}
         livrés chez vous.
       </Informations>
       <Button onPress={onPress}>

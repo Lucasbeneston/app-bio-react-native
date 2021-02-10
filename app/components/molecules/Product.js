@@ -66,7 +66,7 @@ const TypePrice = styled.Text`
 const ValuePrice = styled.Text`
   font-size: ${(props) => (props.member ? "14px" : "16px")};
   font-weight: 600;
-  color: ${(props) => (props.member ? colors.BlueKazidomi : "black")};
+  color: ${(props) => (props.member ? colors.BurningOrange : "black")};
 `;
 const ButtonAdd = styled.TouchableOpacity`
   height: 40px;
@@ -89,7 +89,7 @@ export default function Product({
   memberPrice,
 }) {
   return (
-    <Container>
+    <Container activeOpacity={0.8}>
       <IllustrationContainer>
         <ProductIllustration source={illustration} />
       </IllustrationContainer>

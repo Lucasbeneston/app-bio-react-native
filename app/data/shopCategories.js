@@ -1,6 +1,6 @@
 export default [
-  "New",
   "Bons plans",
+  "New",
   "Salé",
   "Sucré",
   "Boissons",
