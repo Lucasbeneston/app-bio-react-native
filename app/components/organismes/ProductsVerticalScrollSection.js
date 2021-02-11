@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
 
-// Component
-import Product from "../../components/molecules/Product";
-
 // Styles
 const Container = styled.View`
   margin: 15px 0;
@@ -20,8 +17,8 @@ const ScrollViewHorizontal = styled.ScrollView`
 `;
 
 export default function ProductsVerticalScrollSection({
+  Children,
   titleSection,
-  productsArray,
 }) {
   return (
     <Container>
@@ -30,19 +27,7 @@ export default function ProductsVerticalScrollSection({
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       >
-        {productsArray
-          .map((product) => (
-            <Product
-              key={product.name}
-              illustration={product.illustration}
-              brand={product.brand}
-              name={product.name}
-              quantity={product.quantity}
-              standardPrice={product.standardPrice}
-              memberPrice={product.memberPrice}
-            />
-          ))
-          .slice(0, 6)}
+        {Children}
       </ScrollViewHorizontal>
     </Container>
   );

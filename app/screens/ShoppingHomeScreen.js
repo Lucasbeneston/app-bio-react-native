@@ -9,7 +9,7 @@ import shopProducts from "../data/shopProducts";
 import TopBar from "../components/organismes/TopBar";
 import BecomeAMemberContainer from "../components/molecules/BecomeAMemberContainer";
 import ProductsVerticalScrollSection from "../components/organismes/ProductsVerticalScrollSection";
-
+import Product from "../components/molecules/Product";
 // Styles
 const Container = styled.SafeAreaView`
   height: 100%;
@@ -34,10 +34,29 @@ export default function ShoppingScreen({ navigation }) {
         <ProductsVerticalScrollSection
           titleSection="On craque pour..."
           productsArray={shopProducts}
-        />
-        <ProductsVerticalScrollSection
-          titleSection="Les produits populaires"
-          productsArray={shopProducts}
+          Children={shopProducts
+            .map((product) => (
+              <Product
+                onPress={() =>
+                  navigation.navigate("ShoppingProductDetailScreen", {
+                    illustrationSrc: product.illustration,
+                    brand: product.brand,
+                    name: product.name,
+                    quantity: product.quantity,
+                    standardPrice: product.standardPrice,
+                    memberPrice: product.memberPrice,
+                  })
+                }
+                key={product.name}
+                illustration={product.illustration}
+                brand={product.brand}
+                name={product.name}
+                quantity={product.quantity}
+                standardPrice={product.standardPrice}
+                memberPrice={product.memberPrice}
+              />
+            ))
+            .slice(0, 6)}
         />
       </ScrollViewVertical>
     </Container>

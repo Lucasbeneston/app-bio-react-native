@@ -1,12 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import colors from "../config/colors";
 
 // Screens
 import BlogStackScreens from "./BlogStackScreens";
-import ShoppingHomeScreen from "../screens/ShoppingHomeScreen";
 import MembershipScreen from "../screens/MembershipScreen";
+import ShoppingStackScreens from "./ShoppingStackScreens";
 
 // Components
 import MembershipButton from "../components/atoms/MembershipButton";
@@ -14,6 +15,17 @@ import MembershipButton from "../components/atoms/MembershipButton";
 // TAB Navigation
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
+  const getTabBarVisibility = (route) => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+    if (
+      routeName === "ShoppingProductDetailScreen" ||
+      routeName === "BlogPostDetailsScreen"
+    ) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -32,7 +44,13 @@ export default function TabNavigation() {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Blog" component={BlogStackScreens} />
+      <Tab.Screen
+        name="Blog"
+        component={BlogStackScreens}
+        options={({ route }) => ({
+          tabBarVisible: getTabBarVisibility(route),
+        })}
+      />
       <Tab.Screen
         name="Membership"
         component={MembershipScreen}
@@ -43,8 +61,11 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Shopping"
-        component={ShoppingHomeScreen}
-        options={{ title: "Boutique" }}
+        component={ShoppingStackScreens}
+        options={({ route }) => ({
+          tabBarVisible: getTabBarVisibility(route),
+          tabBarLabel: "Boutique",
+        })}
       />
     </Tab.Navigator>
   );

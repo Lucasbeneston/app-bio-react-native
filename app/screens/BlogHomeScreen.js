@@ -19,7 +19,7 @@ const ScrollViewItems = styled.ScrollView`
   padding: 2.5% 5%;
 `;
 
-export default function BlogScreen({ navigation }) {
+export default function BlogHomeScreen({ navigation }) {
   return (
     <Container>
       <TopBar

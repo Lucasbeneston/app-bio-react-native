@@ -81,6 +81,7 @@ const ButtonAddTitle = styled.Text`
 `;
 
 export default function Product({
+  onPress,
   illustration,
   brand,
   name,
@@ -89,7 +90,7 @@ export default function Product({
   memberPrice,
 }) {
   return (
-    <Container activeOpacity={0.8}>
+    <Container activeOpacity={0.8} onPress={onPress}>
       <IllustrationContainer>
         <ProductIllustration source={illustration} />
       </IllustrationContainer>

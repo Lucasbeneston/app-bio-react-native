@@ -17,7 +17,7 @@ const Label = styled.Text`
   color: white;
 `;
 
-export default function MembershipButton({ size }) {
+export default function MembershipButton() {
   return (
     <Container>
       <Ionicons name="person-add-outline" size={34} color="white" />
