@@ -11,11 +11,12 @@ const Button = styled.TouchableOpacity`
   background-color: ${colors.BlueKazidomi};
   align-items: center;
   justify-content: center;
+  margin-left: ${(props) => props.marginLeft};
 `;
 
-export default function RondedButton({ onPress, ioniconName }) {
+export default function RondedButton({ onPress, ioniconName, marginLeft }) {
   return (
-    <Button onPress={onPress}>
+    <Button marginLeft={marginLeft} onPress={onPress}>
       <Ionicons name={ioniconName} size={20} color="white" />
     </Button>
   );

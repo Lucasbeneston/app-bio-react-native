@@ -23,6 +23,7 @@ export default function TopBar({
     <SafeAreaView>
       <TopBarContainer>
         <RondedButtonContainer
+          open={open}
           onPressSearch={onPressSearch}
           onPressMenu={() => {
             setOpen(!open);
