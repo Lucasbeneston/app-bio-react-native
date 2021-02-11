@@ -60,6 +60,7 @@ export default function PostDetailsIllustrationContainer({
         <RondedButton onPress={onPress} ioniconName="close-outline" />
         <ShareLikeContainer>
           <RondedButton
+            marginLeft="0px"
             onPress={() => alert("Press share")}
             ioniconName="share-outline"
             color={colors.BlueOxford}

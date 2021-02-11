@@ -28,14 +28,11 @@ export default function RondedButtonContainer({
   open,
   onPressMenu,
   onPressSearch,
+  menuIconName,
 }) {
   return (
     <ButtonContainer open={open}>
-      <RondedButton
-        marginLeft="0px"
-        onPress={onPressMenu}
-        ioniconName="grid-outline"
-      />
+      <RondedButton onPress={onPressMenu} ioniconName={menuIconName} />
       <RondedButton
         marginLeft="10px"
         onPress={onPressSearch}

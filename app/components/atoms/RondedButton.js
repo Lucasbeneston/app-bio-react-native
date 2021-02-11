@@ -11,7 +11,7 @@ const Button = styled.TouchableOpacity`
   background-color: ${colors.BlueKazidomi};
   align-items: center;
   justify-content: center;
-  margin-left: ${(props) => props.marginLeft};
+  margin-left: ${(props) => props.marginLeft || "0"};
 `;
 
 export default function RondedButton({ onPress, ioniconName, marginLeft }) {

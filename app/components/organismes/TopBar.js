@@ -24,7 +24,10 @@ export default function TopBar({
       <TopBarContainer>
         <RondedButtonContainer
           open={open}
-          onPressSearch={onPressSearch}
+          menuIconName={open ? "close-outline" : "menu-outline"}
+          onPressSearch={() => {
+            setOpen(!open);
+          }}
           onPressMenu={() => {
             setOpen(!open);
           }}
