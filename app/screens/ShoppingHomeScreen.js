@@ -45,6 +45,37 @@ export default function ShoppingScreen({ navigation }) {
                     quantity: product.quantity,
                     standardPrice: product.standardPrice,
                     memberPrice: product.memberPrice,
+                    ingredients: product.ingredients,
+                    use: product.use,
+                    whyYouWillLoveIt: product.whyYouWillLoveIt,
+                  })
+                }
+                key={product.name}
+                illustration={product.illustration}
+                brand={product.brand}
+                name={product.name}
+                quantity={product.quantity}
+                standardPrice={product.standardPrice}
+                memberPrice={product.memberPrice}
+              />
+            ))
+            .slice(0, 6)}
+        />
+        <ProductsVerticalScrollSection
+          titleSection="Les produits populaires"
+          productsArray={shopProducts}
+          Children={shopProducts
+            .map((product) => (
+              <Product
+                onPress={() =>
+                  navigation.navigate("ShoppingProductDetailScreen", {
+                    illustrationSrc: product.illustration,
+                    brand: product.brand,
+                    name: product.name,
+                    quantity: product.quantity,
+                    standardPrice: product.standardPrice,
+                    memberPrice: product.memberPrice,
+                    ingredients: product.ingredients,
                   })
                 }
                 key={product.name}
