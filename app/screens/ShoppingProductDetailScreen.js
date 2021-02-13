@@ -1,24 +1,98 @@
 import React from "react";
+import { SafeAreaView } from "react-native";
 import styled from "styled-components";
 import colors from "../config/colors";
 
 // Components
 import RondedButton from "../components/atoms/RondedButton";
-import { ScrollView } from "react-native-gesture-handler";
 
-const Container = styled.SafeAreaView``;
+export default function ShoppingProductDetailScreen({ route, navigation }) {
+  const {
+    illustrationSrc,
+    brand,
+    name,
+    quantity,
+    standardPrice,
+    memberPrice,
+    ingredients,
+    use,
+    whyYouWillLoveIt,
+  } = route.params;
+
+  return (
+    <>
+      <SafeAreaView>
+        <IllustrationContainer>
+          <ButtonsContainer>
+            <RondedButton
+              onPress={() => navigation.goBack()}
+              ioniconName="close-outline"
+            />
+            <RondedButton
+              onPress={() => alert("Press like")}
+              ioniconName="heart-outline"
+            />
+          </ButtonsContainer>
+          <Illustration source={illustrationSrc} />
+        </IllustrationContainer>
+        <AllPriceContainer>
+          <StandardPriceContainer>
+            <StandardPrice>{standardPrice}</StandardPrice>
+            <PriceText>Standard</PriceText>
+          </StandardPriceContainer>
+          <MemberPriceContainer>
+            <MemberPrice>{memberPrice}</MemberPrice>
+            <PriceText>Membres</PriceText>
+          </MemberPriceContainer>
+        </AllPriceContainer>
+      </SafeAreaView>
+      <ScrollViewInformation>
+        <InformationContainer>
+          <Brand>{brand}</Brand>
+          <Name>{name}</Name>
+          <Quantity>{quantity}</Quantity>
+          <InformationsTitle>Ingrédients/Composition</InformationsTitle>
+          {ingredients.map((ingredient, index) => (
+            <InformationsDetails key={index}>
+              - {ingredient}
+            </InformationsDetails>
+          ))}
+          <InformationsTitle>Utilisation</InformationsTitle>
+          <InformationsDetails>{use}</InformationsDetails>
+          <InformationsTitle>Pourquoi vous allez adorer</InformationsTitle>
+          <InformationsDetails>{whyYouWillLoveIt}</InformationsDetails>
+        </InformationContainer>
+      </ScrollViewInformation>
+      <AddAndQuantityContainer>
+        <InputNumberContainer>
+          <InputNumberLess activeOpacity={0.7}>
+            <SignMoreLess>-</SignMoreLess>
+          </InputNumberLess>
+          <InputNumberMore activeOpacity={0.7}>
+            <SignMoreLess>+</SignMoreLess>
+          </InputNumberMore>
+          <InputNumberValue>
+            <TextValue>1</TextValue>
+          </InputNumberValue>
+        </InputNumberContainer>
+        <AddToCartButton activeOpacity={0.7}>
+          <AddToCartTitle>Ajouter au panier</AddToCartTitle>
+        </AddToCartButton>
+      </AddAndQuantityContainer>
+    </>
+  );
+}
 
 const IllustrationContainer = styled.View`
   width: 100%;
-  height: 250px;
-  border-bottom-width: 2px;
+  height: 300px;
+  border-bottom-width: 6px;
   border-bottom-color: ${colors.GreyExtraLight};
-  padding: 20px;
 `;
 
 const ButtonsContainer = styled.View`
   position: absolute;
-  width: 100%;
+  width: 90%;
   margin: 0 5%;
   flex-direction: row;
   justify-content: space-between;
@@ -29,9 +103,61 @@ const Illustration = styled.Image`
   height: null;
   width: null;
   resize-mode: contain;
+  margin: 20px 20px 30px;
 `;
 
-// Bottom
+// Prices
+const AllPriceContainer = styled.View`
+  position: absolute;
+  flex-direction: row;
+  align-self: flex-start;
+  padding: 0 10px;
+  bottom: -27px;
+  width: 100%;
+  justify-content: center;
+`;
+
+const StandardPriceContainer = styled.View`
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px 0 35px;
+  background-color: ${colors.GreyExtraLight};
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-color: ${colors.BluePorcelain};
+  border-width: 4px;
+  border-right-width: 0px;
+`;
+
+const MemberPriceContainer = styled.View`
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 35px 0 20px;
+  background-color: ${colors.GreyExtraLight};
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-color: ${colors.BluePorcelain};
+  border-width: 4px;
+  border-left-width: 0px;
+`;
+
+const StandardPrice = styled.Text`
+  font-size: 16px;
+  font-weight: 700;
+`;
+const MemberPrice = styled.Text`
+  font-size: 16px;
+  font-weight: 700;
+  color: ${colors.BurningOrange};
+`;
+const PriceText = styled.Text`
+  font-size: 12px;
+  color: ${colors.GreyDark};
+`;
+
+// AddAndQuantityContainer
 const AddAndQuantityContainer = styled.View`
   width: 90%;
   margin: 10% 5%;
@@ -103,8 +229,12 @@ const AddToCartTitle = styled.Text`
 `;
 
 // Informations
+const ScrollViewInformation = styled.ScrollView`
+  z-index: -1;
+`;
+
 const InformationContainer = styled.View`
-  padding: 5% 5% 150px;
+  padding: 40px 5% 150px;
 `;
 const Name = styled.Text`
   font-size: 20px;
@@ -119,83 +249,12 @@ const Quantity = styled.Text`
   font-size: 18px;
   color: ${colors.GreyDark};
 `;
-const MemberPrice = styled.Text``;
-const StandardPrice = styled.Text``;
 
 const InformationsTitle = styled.Text`
-  font-size: 18;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 20px;
 `;
 const InformationsDetails = styled.Text`
   margin-top: 5px;
 `;
-
-export default function ShoppingProductDetailScreen({ route, navigation }) {
-  const {
-    illustrationSrc,
-    brand,
-    name,
-    quantity,
-    standardPrice,
-    memberPrice,
-    ingredients,
-    use,
-    whyYouWillLoveIt,
-  } = route.params;
-
-  return (
-    <>
-      <Container>
-        <IllustrationContainer>
-          <ButtonsContainer>
-            <RondedButton
-              onPress={() => navigation.goBack()}
-              ioniconName="close-outline"
-            />
-            <RondedButton
-              onPress={() => alert("Press like")}
-              ioniconName="heart-outline"
-            />
-          </ButtonsContainer>
-          <Illustration source={illustrationSrc} />
-        </IllustrationContainer>
-      </Container>
-      <ScrollView>
-        <InformationContainer>
-          <Brand>{brand}</Brand>
-          <Name>{name}</Name>
-          <Quantity>{quantity}</Quantity>
-          <StandardPrice>{standardPrice}</StandardPrice>
-          <MemberPrice>{memberPrice}</MemberPrice>
-          <InformationsTitle>Ingrédients/Composition</InformationsTitle>
-          {ingredients.map((ingredient, index) => (
-            <InformationsDetails key={index}>
-              - {ingredient}
-            </InformationsDetails>
-          ))}
-          <InformationsTitle>Utilisation</InformationsTitle>
-          <InformationsDetails>{use}</InformationsDetails>
-          <InformationsTitle>Pourquoi vous allez adorer</InformationsTitle>
-          <InformationsDetails>{whyYouWillLoveIt}</InformationsDetails>
-        </InformationContainer>
-      </ScrollView>
-      <AddAndQuantityContainer>
-        <InputNumberContainer>
-          <InputNumberLess activeOpacity={0.7}>
-            <SignMoreLess>-</SignMoreLess>
-          </InputNumberLess>
-          <InputNumberMore activeOpacity={0.7}>
-            <SignMoreLess>+</SignMoreLess>
-          </InputNumberMore>
-          <InputNumberValue>
-            <TextValue>1</TextValue>
-          </InputNumberValue>
-        </InputNumberContainer>
-        <AddToCartButton activeOpacity={0.7}>
-          <AddToCartTitle>Ajouter au panier</AddToCartTitle>
-        </AddToCartButton>
-      </AddAndQuantityContainer>
-    </>
-  );
-}
