@@ -13,7 +13,7 @@ const TopBarContainer = styled.View`
 `;
 
 export default function TopBar({
-  onPressSearch,
+  isShoopingScreen,
   categoriesArray,
   onPressCategory,
 }) {
@@ -23,6 +23,7 @@ export default function TopBar({
     <SafeAreaView>
       <TopBarContainer>
         <RondedButtonContainer
+          isShoopingScreen={isShoopingScreen}
           open={open}
           menuIconName={open ? "close-outline" : "menu-outline"}
           onPressSearch={() => {

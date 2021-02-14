@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { Entypo } from "@expo/vector-icons";
 import colors from "../config/colors";
 
 // Screens
@@ -32,11 +32,11 @@ export default function TabNavigation() {
         tabBarIcon: ({ color, size }) => {
           let iconName;
           if (route.name === "Blog") {
-            iconName = "book-outline";
+            iconName = "book";
           } else if (route.name === "Shopping") {
-            iconName = "cart-outline";
+            iconName = "shop";
           }
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Entypo name={iconName} size={size} color={color} />;
         },
       })}
       tabBarOptions={{

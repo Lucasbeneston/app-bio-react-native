@@ -25,6 +25,7 @@ const InputSearch = styled.TextInput`
 `;
 
 export default function RondedButtonContainer({
+  isShoopingScreen,
   open,
   onPressMenu,
   onPressSearch,
@@ -33,6 +34,15 @@ export default function RondedButtonContainer({
   return (
     <ButtonContainer open={open}>
       <RondedButton onPress={onPressMenu} ioniconName={menuIconName} />
+      {isShoopingScreen ? (
+        <RondedButton
+          marginLeft="10px"
+          onPress={() => {
+            alert("Open cart");
+          }}
+          ioniconName="cart-outline"
+        />
+      ) : null}
       <RondedButton
         marginLeft="10px"
         onPress={onPressSearch}

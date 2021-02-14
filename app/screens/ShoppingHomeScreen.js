@@ -23,6 +23,7 @@ export default function ShoppingScreen({ navigation }) {
   return (
     <Container>
       <TopBar
+        isShoopingScreen={true}
         onPressSearch={() => alert("Press Search")}
         categoriesArray={shopCategories}
         onPressCategory={() => alert("Press category")}
@@ -76,6 +77,8 @@ export default function ShoppingScreen({ navigation }) {
                     standardPrice: product.standardPrice,
                     memberPrice: product.memberPrice,
                     ingredients: product.ingredients,
+                    use: product.use,
+                    whyYouWillLoveIt: product.whyYouWillLoveIt,
                   })
                 }
                 key={product.name}

@@ -23,6 +23,7 @@ export default function BlogHomeScreen({ navigation }) {
   return (
     <Container>
       <TopBar
+        isShoopingScreen={false}
         onPressSearch={() => alert("Press Search")}
         categoriesArray={blogCategories}
         onPressCategory={() => alert("Press category")}
