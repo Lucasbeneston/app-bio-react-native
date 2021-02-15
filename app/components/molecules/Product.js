@@ -2,13 +2,57 @@ import React from "react";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
 
+export default function Product({
+  isInCategoryScreen,
+  onPress,
+  illustration,
+  brand,
+  name,
+  quantity,
+  standardPrice,
+  memberPrice,
+}) {
+  return (
+    <Container
+      activeOpacity={0.8}
+      onPress={onPress}
+      isInCategoryScreen={isInCategoryScreen}
+    >
+      <IllustrationContainer>
+        <ProductIllustration source={illustration} />
+      </IllustrationContainer>
+      <InformationContainer>
+        <Brand>{brand}</Brand>
+        <Name numberOfLines={2}>{name}</Name>
+        <Quantity numberOfLines={1}>{quantity}</Quantity>
+        <PriceButtonAddContainer>
+          <PriceContainer>
+            <Price>
+              <TypePrice>Standard</TypePrice>
+              <ValuePrice>{standardPrice}</ValuePrice>
+            </Price>
+            <Price>
+              <TypePrice member>Membre</TypePrice>
+              <ValuePrice member>{memberPrice}</ValuePrice>
+            </Price>
+          </PriceContainer>
+          <ButtonAdd>
+            <ButtonAddTitle>Ajouter</ButtonAddTitle>
+          </ButtonAdd>
+        </PriceButtonAddContainer>
+      </InformationContainer>
+    </Container>
+  );
+}
+
 // Styles
 const Container = styled.TouchableOpacity`
   height: 350px;
-  width: 175px;
+  width: ${(props) => (props.isInCategoryScreen ? "45%" : "175px")};
   border-radius: 10px;
   background-color: ${colors.BluePorcelain};
-  margin-right: 15px;
+  ${(props) =>
+    props.isInCategoryScreen ? "margin-bottom: 15px" : "margin-right: 15px"};
 `;
 const IllustrationContainer = styled.View`
   width: 175px;
@@ -79,41 +123,3 @@ const ButtonAddTitle = styled.Text`
   font-weight: 600;
   color: white;
 `;
-
-export default function Product({
-  onPress,
-  illustration,
-  brand,
-  name,
-  quantity,
-  standardPrice,
-  memberPrice,
-}) {
-  return (
-    <Container activeOpacity={0.8} onPress={onPress}>
-      <IllustrationContainer>
-        <ProductIllustration source={illustration} />
-      </IllustrationContainer>
-      <InformationContainer>
-        <Brand>{brand}</Brand>
-        <Name numberOfLines={2}>{name}</Name>
-        <Quantity numberOfLines={1}>{quantity}</Quantity>
-        <PriceButtonAddContainer>
-          <PriceContainer>
-            <Price>
-              <TypePrice>Standard</TypePrice>
-              <ValuePrice>{standardPrice}</ValuePrice>
-            </Price>
-            <Price>
-              <TypePrice member>Membre</TypePrice>
-              <ValuePrice member>{memberPrice}</ValuePrice>
-            </Price>
-          </PriceContainer>
-          <ButtonAdd>
-            <ButtonAddTitle>Ajouter</ButtonAddTitle>
-          </ButtonAdd>
-        </PriceButtonAddContainer>
-      </InformationContainer>
-    </Container>
-  );
-}
