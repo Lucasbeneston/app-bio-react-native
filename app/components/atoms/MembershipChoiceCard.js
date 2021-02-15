@@ -9,9 +9,14 @@ export default function MembershipChoiceCard({
   priceYear,
   isPriceMember,
   priceMonth,
+  onPress,
 }) {
   return (
-    <ChoiceContainer selected={isSelected}>
+    <ChoiceContainer
+      selected={isSelected}
+      activeOpacity={0.6}
+      onPress={onPress}
+    >
       <SubTitle>{subTitle}</SubTitle>
       <Title>{title}</Title>
       <PriceYear member={isPriceMember}>{priceYear}</PriceYear>
@@ -20,7 +25,7 @@ export default function MembershipChoiceCard({
   );
 }
 
-const ChoiceContainer = styled.View`
+const ChoiceContainer = styled.TouchableOpacity`
   padding: 30px 20px;
   width: 47.5%;
   background-color: ${colors.GreyExtraLight};

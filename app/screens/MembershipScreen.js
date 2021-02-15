@@ -22,7 +22,7 @@ export default function MembershipScreen() {
           <BoldText>renouvelle automatiquement</BoldText>. Vous pouvez annuler
           votre adhésion au bout d'un an.
         </BottomText>
-        <SubscribeButton>
+        <SubscribeButton activeOpacity={0.7}>
           <SubscribeButtonTitle>Ajouter au panier</SubscribeButtonTitle>
         </SubscribeButton>
       </SubscribeContainer>
@@ -62,7 +62,7 @@ const BottomText = styled.Text`
 const BoldText = styled.Text`
   font-weight: 600;
 `;
-const SubscribeButton = styled.View`
+const SubscribeButton = styled.TouchableOpacity`
   height: 60px;
   background-color: ${colors.BlueOxford};
   border-radius: 30px;

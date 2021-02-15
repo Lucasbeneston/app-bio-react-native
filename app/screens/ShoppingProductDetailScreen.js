@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native";
 import styled from "styled-components";
 import colors from "../config/colors";
@@ -19,6 +19,7 @@ export default function ShoppingProductDetailScreen({ route, navigation }) {
     whyYouWillLoveIt,
   } = route.params;
 
+  const [productQuantity, setProductQuantity] = useState(1);
   return (
     <>
       <SafeAreaView>
@@ -65,17 +66,31 @@ export default function ShoppingProductDetailScreen({ route, navigation }) {
       </ScrollViewInformation>
       <AddAndQuantityContainer>
         <InputNumberContainer>
-          <InputNumberLess activeOpacity={0.7}>
+          <InputNumberLess
+            activeOpacity={0.7}
+            onPress={() => {
+              if (productQuantity > 1) {
+                setProductQuantity(productQuantity - 1);
+              }
+            }}
+          >
             <SignMoreLess>-</SignMoreLess>
           </InputNumberLess>
-          <InputNumberMore activeOpacity={0.7}>
+          <InputNumberMore
+            activeOpacity={0.7}
+            onPress={() => {
+              if (productQuantity < 100) {
+                setProductQuantity(productQuantity + 1);
+              }
+            }}
+          >
             <SignMoreLess>+</SignMoreLess>
           </InputNumberMore>
           <InputNumberValue>
-            <TextValue>1</TextValue>
+            <TextValue>{productQuantity}</TextValue>
           </InputNumberValue>
         </InputNumberContainer>
-        <AddToCartButton activeOpacity={0.7}>
+        <AddToCartButton activeOpacity={0.8}>
           <AddToCartTitle>Ajouter au panier</AddToCartTitle>
         </AddToCartButton>
       </AddAndQuantityContainer>

@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 import MembershipChoiceCard from "../atoms/MembershipChoiceCard";
 
 export default function SubscribeChoicesContainer() {
+  const [isSelectedEvent, setIsSelectedEvent] = useState({
+    annual: true,
+    monthly: false,
+  });
+
+  console.log("ANNUAL :", isSelectedEvent.annual);
+  console.log("MONTHLY :", isSelectedEvent.monthly);
+
   return (
     <Container>
       <MembershipChoiceCard
-        isSelected={true}
+        isSelected={isSelectedEvent.annual}
+        onPress={() => {
+          setIsSelectedEvent({
+            annual: !setIsSelectedEvent.annual,
+          });
+        }}
         title="annuel"
         subTitle="paiement"
         priceYear="80€/an"
@@ -14,7 +27,12 @@ export default function SubscribeChoicesContainer() {
         priceMonth="6,67€/mois"
       />
       <MembershipChoiceCard
-        isSelected={false}
+        isSelected={isSelectedEvent.monthly}
+        onPress={() => {
+          setIsSelectedEvent({
+            monthly: !setIsSelectedEvent.monthly,
+          });
+        }}
         title="mensuel"
         subTitle="paiement"
         priceYear="120€/an"
