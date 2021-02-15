@@ -9,16 +9,6 @@ import blogCategories from "../data/blogCategories";
 import TopBar from "../components/organismes/TopBar";
 import BlogPost from "../components/organismes/BlogPost";
 
-// Styles
-const Container = styled.SafeAreaView`
-  height: 100%;
-  width: 100%;
-`;
-const ScrollViewItems = styled.ScrollView`
-  margin-top: 2.5%;
-  padding: 2.5% 5%;
-`;
-
 export default function BlogHomeScreen({ navigation }) {
   return (
     <Container>
@@ -54,3 +44,13 @@ export default function BlogHomeScreen({ navigation }) {
     </Container>
   );
 }
+
+// Styles
+const Container = styled.SafeAreaView`
+  height: 100%;
+  width: 100%;
+`;
+const ScrollViewItems = styled.ScrollView`
+  margin-top: 2.5%;
+  padding: 2.5% 5%;
+`;

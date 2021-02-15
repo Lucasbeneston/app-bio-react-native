@@ -83,13 +83,13 @@ export default function ShoppingProductDetailScreen({ route, navigation }) {
   );
 }
 
+// Styles
 const IllustrationContainer = styled.View`
   width: 100%;
   height: 300px;
   border-bottom-width: 6px;
   border-bottom-color: ${colors.GreyExtraLight};
 `;
-
 const ButtonsContainer = styled.View`
   position: absolute;
   width: 90%;
@@ -97,7 +97,6 @@ const ButtonsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
-
 const Illustration = styled.Image`
   flex: 1;
   height: null;
@@ -105,8 +104,6 @@ const Illustration = styled.Image`
   resize-mode: contain;
   margin: 20px 20px 30px;
 `;
-
-// Prices
 const AllPriceContainer = styled.View`
   position: absolute;
   flex-direction: row;
@@ -116,7 +113,6 @@ const AllPriceContainer = styled.View`
   width: 100%;
   justify-content: center;
 `;
-
 const StandardPriceContainer = styled.View`
   justify-content: center;
   align-items: center;
@@ -126,7 +122,6 @@ const StandardPriceContainer = styled.View`
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 `;
-
 const MemberPriceContainer = styled.View`
   justify-content: center;
   align-items: center;
@@ -136,7 +131,6 @@ const MemberPriceContainer = styled.View`
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 `;
-
 const StandardPrice = styled.Text`
   font-size: 16px;
   font-weight: 700;
@@ -150,8 +144,6 @@ const PriceText = styled.Text`
   font-size: 12px;
   color: ${colors.GreyDark};
 `;
-
-// AddAndQuantityContainer
 const AddAndQuantityContainer = styled.View`
   width: 90%;
   margin: 10% 5%;
@@ -221,12 +213,9 @@ const AddToCartTitle = styled.Text`
   color: white;
   font-weight: 600;
 `;
-
-// Informations
 const ScrollViewInformation = styled.ScrollView`
   z-index: -1;
 `;
-
 const InformationContainer = styled.View`
   padding: 40px 5% 150px;
 `;
@@ -243,7 +232,6 @@ const Quantity = styled.Text`
   font-size: 18px;
   color: ${colors.GreyDark};
 `;
-
 const InformationsTitle = styled.Text`
   font-size: 18px;
   font-weight: 600;

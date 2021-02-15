@@ -2,6 +2,31 @@ import React from "react";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
 
+export default function BlogPost({
+  onPress,
+  category,
+  illustrationSrc,
+  title,
+  abstract,
+  publication,
+}) {
+  return (
+    <Post onPress={onPress} activeOpacity={0.8}>
+      <IllustrationContainer>
+        <PostIllustration source={{ uri: illustrationSrc }} />
+        <PostCategoryContainer>
+          <PostCategory>{category}</PostCategory>
+        </PostCategoryContainer>
+      </IllustrationContainer>
+      <InformationContainer>
+        <PostTitle>{title}</PostTitle>
+        <PostAbstract numberOfLines={4}>{abstract}</PostAbstract>
+        <PostPublicationDate>{publication}</PostPublicationDate>
+      </InformationContainer>
+    </Post>
+  );
+}
+
 // Styles
 const Post = styled.TouchableOpacity`
   margin-bottom: 5%;
@@ -47,28 +72,3 @@ const PostPublicationDate = styled.Text`
   margin-top: 10px;
   color: ${colors.GreyLight};
 `;
-
-export default function BlogPost({
-  onPress,
-  category,
-  illustrationSrc,
-  title,
-  abstract,
-  publication,
-}) {
-  return (
-    <Post onPress={onPress} activeOpacity={0.8}>
-      <IllustrationContainer>
-        <PostIllustration source={{ uri: illustrationSrc }} />
-        <PostCategoryContainer>
-          <PostCategory>{category}</PostCategory>
-        </PostCategoryContainer>
-      </IllustrationContainer>
-      <InformationContainer>
-        <PostTitle>{title}</PostTitle>
-        <PostAbstract numberOfLines={4}>{abstract}</PostAbstract>
-        <PostPublicationDate>{publication}</PostPublicationDate>
-      </InformationContainer>
-    </Post>
-  );
-}

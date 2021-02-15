@@ -3,6 +3,15 @@ import styled from "styled-components/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import colors from "../../config/colors";
 
+export default function MembershipButton() {
+  return (
+    <Container>
+      <Ionicons name="person-add-outline" size={34} color="white" />
+      <Label>Adhésion</Label>
+    </Container>
+  );
+}
+
 const Container = styled.View`
   height: 68px;
   width: 110px;
@@ -16,12 +25,3 @@ const Label = styled.Text`
   font-size: 10px;
   color: white;
 `;
-
-export default function MembershipButton() {
-  return (
-    <Container>
-      <Ionicons name="person-add-outline" size={34} color="white" />
-      <Label>Adhésion</Label>
-    </Container>
-  );
-}

@@ -5,25 +5,6 @@ import colors from "../../config/colors";
 // Component
 import RondedButton from "../atoms/RondedButton";
 
-// Style
-const ButtonContainer = styled.View`
-  flex-direction: row;
-  margin: 0 5%;
-  ${(props) => (props.open ? "width: 90%;" : "align-self: flex-start;")};
-`;
-
-const InputSearch = styled.TextInput`
-  height: 40px;
-  ${(props) => (props.open ? "flex:1" : "width: 40px")};
-  margin-left: -40px;
-  border-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-color: ${colors.BlueKazidomi};
-  border-width: 2px;
-  z-index: -1;
-  padding-left: ${(props) => (props.open ? "45px" : "0px")};
-`;
-
 export default function RondedButtonContainer({
   isShoopingScreen,
   open,
@@ -52,3 +33,21 @@ export default function RondedButtonContainer({
     </ButtonContainer>
   );
 }
+
+// Style
+const ButtonContainer = styled.View`
+  flex-direction: row;
+  margin: 0 5%;
+  ${(props) => (props.open ? "width: 90%;" : "align-self: flex-start;")};
+`;
+const InputSearch = styled.TextInput`
+  height: 40px;
+  ${(props) => (props.open ? "flex:1" : "width: 40px")};
+  margin-left: -40px;
+  border-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-color: ${colors.BlueKazidomi};
+  border-width: 2px;
+  z-index: -1;
+  padding-left: ${(props) => (props.open ? "45px" : "0px")};
+`;

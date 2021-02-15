@@ -5,6 +5,36 @@ import colors from "../../config/colors";
 // Component
 import RondedButton from "../../components/atoms/RondedButton";
 
+export default function PostDetailsIllustrationContainer({
+  onPress,
+  category,
+  illustrationSrc,
+}) {
+  return (
+    <Container>
+      <PostIllustration source={{ uri: illustrationSrc }} />
+      <ButtonsContainer>
+        <RondedButton onPress={onPress} ioniconName="close-outline" />
+        <ShareLikeContainer>
+          <RondedButton
+            marginLeft="0px"
+            onPress={() => alert("Press share")}
+            ioniconName="share-outline"
+            color={colors.BlueOxford}
+          />
+          <RondedButton
+            onPress={() => alert("Press like")}
+            ioniconName="heart-outline"
+          />
+        </ShareLikeContainer>
+      </ButtonsContainer>
+      <PostCategoryContainer>
+        <PostCategory>{category}</PostCategory>
+      </PostCategoryContainer>
+    </Container>
+  );
+}
+
 // Styles
 const Container = styled.View`
   width: 100%;
@@ -47,33 +77,3 @@ const PostCategory = styled.Text`
   color: white;
   font-weight: 500;
 `;
-
-export default function PostDetailsIllustrationContainer({
-  onPress,
-  category,
-  illustrationSrc,
-}) {
-  return (
-    <Container>
-      <PostIllustration source={{ uri: illustrationSrc }} />
-      <ButtonsContainer>
-        <RondedButton onPress={onPress} ioniconName="close-outline" />
-        <ShareLikeContainer>
-          <RondedButton
-            marginLeft="0px"
-            onPress={() => alert("Press share")}
-            ioniconName="share-outline"
-            color={colors.BlueOxford}
-          />
-          <RondedButton
-            onPress={() => alert("Press like")}
-            ioniconName="heart-outline"
-          />
-        </ShareLikeContainer>
-      </ButtonsContainer>
-      <PostCategoryContainer>
-        <PostCategory>{category}</PostCategory>
-      </PostCategoryContainer>
-    </Container>
-  );
-}

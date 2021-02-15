@@ -12,7 +12,6 @@ import ShoppingStackScreens from "./ShoppingStackScreens";
 // Components
 import MembershipButton from "../components/atoms/MembershipButton";
 
-// TAB Navigation
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
   const getTabBarVisibility = (route) => {

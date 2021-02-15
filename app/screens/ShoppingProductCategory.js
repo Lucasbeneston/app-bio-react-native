@@ -75,31 +75,26 @@ const Header = styled.View`
   align-items: center;
   margin: 0 5% 10px;
 `;
-
 const CategoryTitleContainer = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
-
 const CategoryTitle = styled.Text`
   font-size: 20px;
   font-weight: 600;
   margin-left: -40px;
 `;
-
 const ProductsContainer = styled.View`
   flex-wrap: wrap;
   padding: 10px 2% 5%;
   flex-direction: row;
 `;
-
 const EmptySectionAlert = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
-
 const EmptySectionAlertOops = styled.Text`
   font-size: 20px;
   font-weight: 600;

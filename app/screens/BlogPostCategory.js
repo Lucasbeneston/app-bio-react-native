@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Text } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import styled from "styled-components";
 
 // Data
@@ -69,31 +69,26 @@ const Header = styled.View`
   align-items: center;
   margin: 0 5% 10px;
 `;
-
 const CategoryTitleContainer = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
-
 const CategoryTitle = styled.Text`
   font-size: 20px;
   font-weight: 600;
   margin-left: -40px;
 `;
-
 const PostsContainer = styled.View`
   flex-wrap: wrap;
   padding: 10px 5% 5%;
   flex-direction: row;
 `;
-
 const EmptySectionAlert = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
 `;
-
 const EmptySectionAlertOops = styled.Text`
   font-size: 20px;
   font-weight: 600;

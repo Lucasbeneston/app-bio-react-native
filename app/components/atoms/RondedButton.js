@@ -3,6 +3,14 @@ import styled from "styled-components/native";
 import colors from "../../config/colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+export default function RondedButton({ onPress, ioniconName, marginLeft }) {
+  return (
+    <Button marginLeft={marginLeft} onPress={onPress}>
+      <Ionicons name={ioniconName} size={20} color="white" />
+    </Button>
+  );
+}
+
 // Styled
 const Button = styled.TouchableOpacity`
   width: 40px;
@@ -13,11 +21,3 @@ const Button = styled.TouchableOpacity`
   justify-content: center;
   margin-left: ${(props) => props.marginLeft || "0"};
 `;
-
-export default function RondedButton({ onPress, ioniconName, marginLeft }) {
-  return (
-    <Button marginLeft={marginLeft} onPress={onPress}>
-      <Ionicons name={ioniconName} size={20} color="white" />
-    </Button>
-  );
-}

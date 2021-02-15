@@ -97,7 +97,6 @@ const PriceContainer = styled.View`
   height: 45px;
   justify-content: space-between;
 `;
-
 const Price = styled.View`
   flex-direction: row;
   justify-content: space-between;

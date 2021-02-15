@@ -4,23 +4,23 @@ import CarouselCardItem, {
   SLIDER_WIDTH,
   ITEM_WIDTH,
 } from "../molecules/CarouselCardItem";
+
+// Data
 import data from "../../data/membershipArguments";
 
 export default function CarouselCards() {
   const isCarousel = useRef(null);
   return (
-    <>
-      <Carousel
-        layout="default"
-        layoutCardOffset={9}
-        ref={isCarousel}
-        data={data}
-        renderItem={CarouselCardItem}
-        sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
-        inactiveSlideShift={0}
-        useScrollView={true}
-      />
-    </>
+    <Carousel
+      layout="default"
+      layoutCardOffset={9}
+      ref={isCarousel}
+      data={data}
+      renderItem={CarouselCardItem}
+      sliderWidth={SLIDER_WIDTH}
+      itemWidth={ITEM_WIDTH}
+      inactiveSlideShift={0}
+      useScrollView={true}
+    />
   );
 }

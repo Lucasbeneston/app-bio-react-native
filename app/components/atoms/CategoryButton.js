@@ -2,6 +2,14 @@ import React from "react";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
 
+export default function CategoryButton({ onPressCategory, name }) {
+  return (
+    <Button onPress={onPressCategory} activeOpacity={0.8}>
+      <Category>{name}</Category>
+    </Button>
+  );
+}
+
 // Styles
 const Button = styled.TouchableOpacity`
   height: 40px;
@@ -16,11 +24,3 @@ const Category = styled.Text`
   font-weight: 600;
   color: ${colors.BlueOxford};
 `;
-
-export default function CategoryButton({ onPressCategory, name }) {
-  return (
-    <Button onPress={onPressCategory} activeOpacity={0.8}>
-      <Category>{name}</Category>
-    </Button>
-  );
-}

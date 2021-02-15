@@ -9,20 +9,8 @@ import MenuShopping from "../molecules/MenuShopping";
 import MenuBlog from "../molecules/MenuBlog";
 import CategoryScrollContainerBlog from "../molecules/CategoryScrollContainerBlog";
 
-// Style
-const TopBarContainer = styled.View`
-  flex-direction: row;
-`;
-
 export default function TopBar({ isShoopingScreen, arrayCategories }) {
   const [open, setOpen] = useState(false);
-  const test = () => {
-    if (isShoopingScreen) {
-      return true;
-    }
-    return false;
-  };
-  console.log(test());
 
   return (
     <SafeAreaView>
@@ -52,3 +40,8 @@ export default function TopBar({ isShoopingScreen, arrayCategories }) {
     </SafeAreaView>
   );
 }
+
+// Style
+const TopBarContainer = styled.View`
+  flex-direction: row;
+`;

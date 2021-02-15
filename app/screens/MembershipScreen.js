@@ -30,12 +30,11 @@ export default function MembershipScreen() {
   );
 }
 
+// Styles
 const Container = styled.View`
   height: 100%;
   width: 100%;
 `;
-
-// Header title
 const ContainerTitle = styled.SafeAreaView`
   justify-content: center;
   align-items: center;
@@ -47,16 +46,12 @@ const Title = styled.Text`
   margin-top: 10px;
   color: white;
 `;
-
-// Slider
 const SliderContainer = styled.View`
   background-color: ${colors.BlueKazidomi};
   flex: 1;
   padding: 7.5% 0;
   align-items: center;
 `;
-
-// SubscribeContainer
 const SubscribeContainer = styled.View`
   padding: 10% 5%;
 `;
@@ -67,8 +62,6 @@ const BottomText = styled.Text`
 const BoldText = styled.Text`
   font-weight: 600;
 `;
-
-// Subscribe button
 const SubscribeButton = styled.View`
   height: 60px;
   background-color: ${colors.BlueOxford};
