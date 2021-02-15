@@ -8,9 +8,6 @@ export default function SubscribeChoicesContainer() {
     monthly: false,
   });
 
-  console.log("ANNUAL :", isSelectedEvent.annual);
-  console.log("MONTHLY :", isSelectedEvent.monthly);
-
   return (
     <Container>
       <MembershipChoiceCard

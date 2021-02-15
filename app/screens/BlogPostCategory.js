@@ -8,6 +8,7 @@ import blogPosts from "../data/blogPosts";
 // Components
 import RondedButton from "../components/atoms/RondedButton";
 import BlogPost from "../components/organismes/BlogPost";
+import EmptySectionSVG from "../components/atoms/EmptySectionSVG";
 
 export default function BlogPostCategory({ route, navigation }) {
   const { selectedCategorie } = route.params;
@@ -30,9 +31,12 @@ export default function BlogPostCategory({ route, navigation }) {
         <PostsContainer>
           {filterArrayByCategory.length === 0 ? (
             <EmptySectionAlert>
-              <EmptySectionAlertOops>Oups...</EmptySectionAlertOops>
+              <EmptySectionSVG />
+              <EmptySectionAlertOops>
+                Oups ! Cette section est vide
+              </EmptySectionAlertOops>
               <EmptySectionAlertInformations>
-                Cette section est vide pour le moment !
+                Nous allons prochainement la remplir de bons produits healthy
               </EmptySectionAlertInformations>
             </EmptySectionAlert>
           ) : (
@@ -92,7 +96,11 @@ const EmptySectionAlert = styled.View`
 const EmptySectionAlertOops = styled.Text`
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
 `;
 const EmptySectionAlertInformations = styled.Text`
   font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
 `;

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ShoppingHomeScreen from "../screens/ShoppingHomeScreen";
 import ShoppingProductCategory from "../screens/ShoppingProductCategory";
 import ShoppingProductDetailScreen from "../screens/ShoppingProductDetailScreen";
+import ShoppingCartScreen from "../screens/ShoppingCartScreen";
 
 const Stack = createStackNavigator();
 const screenOptionStyle = {
@@ -23,6 +24,7 @@ export default function ShoppingStackScreens() {
         name="ShoppingProductDetailScreen"
         component={ShoppingProductDetailScreen}
       />
+      <Stack.Screen name="ShoppingCartScreen" component={ShoppingCartScreen} />
     </Stack.Navigator>
   );
 }

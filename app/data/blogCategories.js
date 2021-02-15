@@ -1,5 +1,4 @@
 export default [
-  "Tous",
   "Cuisine",
   "Santé",
   "A propos",

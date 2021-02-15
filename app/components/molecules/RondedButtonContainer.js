@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
 
@@ -12,6 +13,8 @@ export default function RondedButtonContainer({
   onPressSearch,
   menuIconName,
 }) {
+  const navigation = useNavigation();
+
   return (
     <ButtonContainer open={open}>
       <RondedButton onPress={onPressMenu} ioniconName={menuIconName} />
@@ -19,7 +22,7 @@ export default function RondedButtonContainer({
         <RondedButton
           marginLeft="10px"
           onPress={() => {
-            alert("Open cart");
+            navigation.navigate("ShoppingCartScreen");
           }}
           ioniconName="cart-outline"
         />

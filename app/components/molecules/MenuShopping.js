@@ -30,11 +30,7 @@ export default function InlineMenu({ arrayCategories }) {
           </Link>
         ))}
       </LinkContainer>
-      <Button
-        onPress={() => {
-          alert("Press become ...");
-        }}
-      >
+      <Button onPress={() => navigation.navigate("Membership")}>
         <ButtonTitle>Devenir membre</ButtonTitle>
       </Button>
     </Container>

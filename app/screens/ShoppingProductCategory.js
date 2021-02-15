@@ -8,6 +8,7 @@ import shopProducts from "../data/shopProducts";
 // Components
 import RondedButton from "../components/atoms/RondedButton";
 import Product from "../components/molecules/Product";
+import EmptySectionSVG from "../components/atoms/EmptySectionSVG";
 
 export default function ShoppingProductCategory({ route, navigation }) {
   const { selectedCategorie } = route.params;
@@ -29,9 +30,12 @@ export default function ShoppingProductCategory({ route, navigation }) {
         <ProductsContainer>
           {filterArrayByCategory.length === 0 ? (
             <EmptySectionAlert>
-              <EmptySectionAlertOops>Oups...</EmptySectionAlertOops>
+              <EmptySectionSVG />
+              <EmptySectionAlertOops>
+                Oups ! Cette section est vide
+              </EmptySectionAlertOops>
               <EmptySectionAlertInformations>
-                Cette section est vide pour le moment !
+                Nous allons prochainement la remplir de bons produits healthy
               </EmptySectionAlertInformations>
             </EmptySectionAlert>
           ) : (
@@ -98,7 +102,10 @@ const EmptySectionAlert = styled.View`
 const EmptySectionAlertOops = styled.Text`
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
 `;
 const EmptySectionAlertInformations = styled.Text`
   font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
 `;

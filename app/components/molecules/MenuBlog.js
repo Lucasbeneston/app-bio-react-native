@@ -32,7 +32,7 @@ export default function MenuBlog({ arrayCategories }) {
       </LinkContainer>
       <Button
         onPress={() => {
-          alert("Press become ...");
+          navigation.navigate("ShoppingHomeScreen");
         }}
       >
         <ButtonTitle>Découvrir la boutique</ButtonTitle>
