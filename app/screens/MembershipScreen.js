@@ -39,17 +39,18 @@ const Container = styled.View`
 const ContainerTitle = styled.SafeAreaView`
   justify-content: center;
   align-items: center;
-  background-color: ${colors.BlueKazidomiLight};
+  background-color: ${colors.BlueKazidomi};
 `;
 const Title = styled.Text`
   font-size: 20px;
   font-weight: 700;
   margin-top: 10px;
+  color: white;
 `;
 
 // Slider
 const SliderContainer = styled.View`
-  background-color: ${colors.BlueKazidomiLight};
+  background-color: ${colors.BlueKazidomi};
   flex: 1;
   padding: 7.5% 0;
   align-items: center;
@@ -59,12 +60,10 @@ const SliderContainer = styled.View`
 const SubscribeContainer = styled.View`
   padding: 10% 5%;
 `;
-
 const BottomText = styled.Text`
   text-align: center;
   font-size: 12px;
 `;
-
 const BoldText = styled.Text`
   font-weight: 600;
 `;
@@ -72,7 +71,7 @@ const BoldText = styled.Text`
 // Subscribe button
 const SubscribeButton = styled.View`
   height: 60px;
-  background-color: ${colors.BlueKazidomi};
+  background-color: ${colors.BlueOxford};
   border-radius: 30px;
   margin: 20px 5% 0;
   align-items: center;

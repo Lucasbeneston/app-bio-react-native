@@ -19,7 +19,8 @@ export default function TabNavigation() {
     const routeName = getFocusedRouteNameFromRoute(route);
     if (
       routeName === "ShoppingProductDetailScreen" ||
-      routeName === "BlogPostDetailsScreen"
+      routeName === "BlogPostDetailsScreen" ||
+      routeName === "ShoppingProductCategorie"
     ) {
       return false;
     }

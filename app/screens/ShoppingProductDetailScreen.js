@@ -125,9 +125,6 @@ const StandardPriceContainer = styled.View`
   background-color: ${colors.GreyExtraLight};
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  border-color: ${colors.BluePorcelain};
-  border-width: 4px;
-  border-right-width: 0px;
 `;
 
 const MemberPriceContainer = styled.View`
@@ -138,9 +135,6 @@ const MemberPriceContainer = styled.View`
   background-color: ${colors.GreyExtraLight};
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  border-color: ${colors.BluePorcelain};
-  border-width: 4px;
-  border-left-width: 0px;
 `;
 
 const StandardPrice = styled.Text`

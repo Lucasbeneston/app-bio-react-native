@@ -1,9 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components/native";
 import { Dimensions } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-import Animated from "react-native-reanimated";
 import colors from "../../config/colors";
+
+export default function InlineMenu({ arrayCategories }) {
+  const TabHeight = useBottomTabBarHeight();
+  const ScreenHeight = Dimensions.get("window").height;
+  const safeHeight = ScreenHeight - TabHeight - 300;
+  const navigation = useNavigation();
+
+  return (
+    <Container>
+      <LinkContainer
+        maxHeight={safeHeight}
+        showsVerticalScrollIndicator={false}
+      >
+        {arrayCategories.map((category) => (
+          <Link
+            key={category}
+            onPress={() =>
+              navigation.navigate("ShoppingProductCategorie", {
+                selectedCategorie: category,
+              })
+            }
+          >
+            <Text>{category}</Text>
+          </Link>
+        ))}
+      </LinkContainer>
+      <Button
+        onPress={() => {
+          alert("Press become ...");
+        }}
+      >
+        <ButtonTitle>Devenir membre</ButtonTitle>
+      </Button>
+    </Container>
+  );
+}
 
 // Styles
 const Container = styled.View`
@@ -44,40 +80,3 @@ const ButtonTitle = styled.Text`
   font-weight: 600;
   color: white;
 `;
-
-export default function InlineMenu({ arrayCategories }) {
-  const TabHeight = useBottomTabBarHeight();
-  const ScreenHeight = Dimensions.get("window").height;
-  const safeHeight = ScreenHeight - TabHeight - 300;
-
-  const value = useState(new Animated.Value(0));
-
-  function toggleMenu() {}
-
-  return (
-    <Container>
-      <LinkContainer
-        maxHeight={safeHeight}
-        showsVerticalScrollIndicator={false}
-      >
-        {arrayCategories.map((category) => (
-          <Link
-            key={category}
-            onPress={() => {
-              alert(`Press ${category}`);
-            }}
-          >
-            <Text>{category}</Text>
-          </Link>
-        ))}
-      </LinkContainer>
-      <Button
-        onPress={() => {
-          alert("Press become ...");
-        }}
-      >
-        <ButtonTitle>Devenir membre</ButtonTitle>
-      </Button>
-    </Container>
-  );
-}
