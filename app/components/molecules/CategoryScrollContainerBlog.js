@@ -5,7 +5,7 @@ import { ScrollView } from "react-native";
 // Component
 import CategoryButton from "../atoms/CategoryButton";
 
-export default function CategoryScrollContainer({ arrayCategories }) {
+export default function CategoryScrollContainerBlog({ arrayCategories }) {
   const navigation = useNavigation();
 
   return (
@@ -14,7 +14,7 @@ export default function CategoryScrollContainer({ arrayCategories }) {
         <CategoryButton
           key={category}
           onPressCategory={() =>
-            navigation.navigate("ShoppingProductCategorie", {
+            navigation.navigate("BlogPostCategory", {
               selectedCategorie: category,
             })
           }

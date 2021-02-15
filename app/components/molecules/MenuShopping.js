@@ -21,7 +21,7 @@ export default function InlineMenu({ arrayCategories }) {
           <Link
             key={category}
             onPress={() =>
-              navigation.navigate("ShoppingProductCategorie", {
+              navigation.navigate("ShoppingProductCategory", {
                 selectedCategorie: category,
               })
             }

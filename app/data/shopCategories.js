@@ -1,4 +1,4 @@
-export default [
+const shopCategories = [
   "Bons plans",
   "New",
   "Salé",
@@ -11,3 +11,5 @@ export default [
   "Kazidomi",
   "Vrac",
 ];
+
+export default shopCategories;

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, Text } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import styled from "styled-components";
 
 // Data
@@ -9,7 +9,7 @@ import shopProducts from "../data/shopProducts";
 import RondedButton from "../components/atoms/RondedButton";
 import Product from "../components/molecules/Product";
 
-export default function ShoppingProductCategorie({ route, navigation }) {
+export default function ShoppingProductCategory({ route, navigation }) {
   const { selectedCategorie } = route.params;
   const filterArrayByCategory = shopProducts.filter(
     (item) => item.category === selectedCategorie
@@ -27,8 +27,13 @@ export default function ShoppingProductCategorie({ route, navigation }) {
       </Header>
       <ScrollView>
         <ProductsContainer>
-          {filterArrayByCategory === [] ? (
-            <Text>C'est vide</Text>
+          {filterArrayByCategory.length === 0 ? (
+            <EmptySectionAlert>
+              <EmptySectionAlertOops>Oups...</EmptySectionAlertOops>
+              <EmptySectionAlertInformations>
+                Cette section est vide pour le moment !
+              </EmptySectionAlertInformations>
+            </EmptySectionAlert>
           ) : (
             filterArrayByCategory
               .map((product) => (
@@ -87,4 +92,18 @@ const ProductsContainer = styled.View`
   flex-wrap: wrap;
   padding: 10px 2% 5%;
   flex-direction: row;
+`;
+
+const EmptySectionAlert = styled.View`
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
+
+const EmptySectionAlertOops = styled.Text`
+  font-size: 20px;
+  font-weight: 600;
+`;
+const EmptySectionAlertInformations = styled.Text`
+  font-size: 16px;
 `;

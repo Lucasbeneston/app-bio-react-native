@@ -20,7 +20,8 @@ export default function TabNavigation() {
     if (
       routeName === "ShoppingProductDetailScreen" ||
       routeName === "BlogPostDetailsScreen" ||
-      routeName === "ShoppingProductCategorie"
+      routeName === "ShoppingProductCategory" ||
+      routeName === "BlogPostCategory"
     ) {
       return false;
     }

@@ -3,9 +3,11 @@ import { SafeAreaView } from "react-native";
 import styled from "styled-components/native";
 
 // Components
-import CategoryScrollContainer from "../molecules/CategoryScrollContainer";
+import CategoryScrollContainerShopping from "../molecules/CategoryScrollContainerShopping";
 import RondedButtonContainer from "../molecules/RondedButtonContainer";
-import Menu from "../molecules/Menu";
+import MenuShopping from "../molecules/MenuShopping";
+import MenuBlog from "../molecules/MenuBlog";
+import CategoryScrollContainerBlog from "../molecules/CategoryScrollContainerBlog";
 
 // Style
 const TopBarContainer = styled.View`
@@ -14,6 +16,13 @@ const TopBarContainer = styled.View`
 
 export default function TopBar({ isShoopingScreen, arrayCategories }) {
   const [open, setOpen] = useState(false);
+  const test = () => {
+    if (isShoopingScreen) {
+      return true;
+    }
+    return false;
+  };
+  console.log(test());
 
   return (
     <SafeAreaView>
@@ -29,9 +38,17 @@ export default function TopBar({ isShoopingScreen, arrayCategories }) {
             setOpen(!open);
           }}
         />
-        <CategoryScrollContainer arrayCategories={arrayCategories} />
+        {isShoopingScreen ? (
+          <CategoryScrollContainerShopping arrayCategories={arrayCategories} />
+        ) : (
+          <CategoryScrollContainerBlog arrayCategories={arrayCategories} />
+        )}
       </TopBarContainer>
-      {open ? <Menu arrayCategories={arrayCategories} /> : null}
+      {open & isShoopingScreen ? (
+        <MenuShopping arrayCategories={arrayCategories} />
+      ) : open & !isShoopingScreen ? (
+        <MenuBlog arrayCategories={arrayCategories} />
+      ) : null}
     </SafeAreaView>
   );
 }
