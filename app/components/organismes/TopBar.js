@@ -12,11 +12,7 @@ const TopBarContainer = styled.View`
   flex-direction: row;
 `;
 
-export default function TopBar({
-  isShoopingScreen,
-  categoriesArray,
-  onPressCategory,
-}) {
+export default function TopBar({ isShoopingScreen, arrayCategories }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -33,12 +29,9 @@ export default function TopBar({
             setOpen(!open);
           }}
         />
-        <CategoryScrollContainer
-          categoriesArray={categoriesArray}
-          onPressCategory={onPressCategory}
-        />
+        <CategoryScrollContainer arrayCategories={arrayCategories} />
       </TopBarContainer>
-      {open ? <Menu arrayCategories={categoriesArray} /> : null}
+      {open ? <Menu arrayCategories={arrayCategories} /> : null}
     </SafeAreaView>
   );
 }

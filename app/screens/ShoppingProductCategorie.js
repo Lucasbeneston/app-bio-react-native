@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView } from "react-native";
+import { SafeAreaView, ScrollView, Text } from "react-native";
 import styled from "styled-components";
 
 // Data
@@ -11,7 +11,9 @@ import Product from "../components/molecules/Product";
 
 export default function ShoppingProductCategorie({ route, navigation }) {
   const { selectedCategorie } = route.params;
-
+  const filterArrayByCategory = shopProducts.filter(
+    (item) => item.category === selectedCategorie
+  );
   return (
     <SafeAreaView>
       <Header>
@@ -25,33 +27,37 @@ export default function ShoppingProductCategorie({ route, navigation }) {
       </Header>
       <ScrollView>
         <ProductsContainer>
-          {shopProducts
-            .map((product) => (
-              <Product
-                isInCategoryScreen={true}
-                onPress={() =>
-                  navigation.navigate("ShoppingProductDetailScreen", {
-                    illustrationSrc: product.illustration,
-                    brand: product.brand,
-                    name: product.name,
-                    quantity: product.quantity,
-                    standardPrice: product.standardPrice,
-                    memberPrice: product.memberPrice,
-                    ingredients: product.ingredients,
-                    use: product.use,
-                    whyYouWillLoveIt: product.whyYouWillLoveIt,
-                  })
-                }
-                key={product.name}
-                illustration={product.illustration}
-                brand={product.brand}
-                name={product.name}
-                quantity={product.quantity}
-                standardPrice={product.standardPrice}
-                memberPrice={product.memberPrice}
-              />
-            ))
-            .slice(0, 6)}
+          {filterArrayByCategory === [] ? (
+            <Text>C'est vide</Text>
+          ) : (
+            filterArrayByCategory
+              .map((product) => (
+                <Product
+                  isInCategoryScreen={true}
+                  onPress={() =>
+                    navigation.navigate("ShoppingProductDetailScreen", {
+                      illustrationSrc: product.illustration,
+                      brand: product.brand,
+                      name: product.name,
+                      quantity: product.quantity,
+                      standardPrice: product.standardPrice,
+                      memberPrice: product.memberPrice,
+                      ingredients: product.ingredients,
+                      use: product.use,
+                      whyYouWillLoveIt: product.whyYouWillLoveIt,
+                    })
+                  }
+                  key={product.name}
+                  illustration={product.illustration}
+                  brand={product.brand}
+                  name={product.name}
+                  quantity={product.quantity}
+                  standardPrice={product.standardPrice}
+                  memberPrice={product.memberPrice}
+                />
+              ))
+              .slice(0, 6)
+          )}
         </ProductsContainer>
       </ScrollView>
     </SafeAreaView>
@@ -62,7 +68,7 @@ export default function ShoppingProductCategorie({ route, navigation }) {
 const Header = styled.View`
   flex-direction: row;
   align-items: center;
-  margin: 0 5%;
+  margin: 0 5% 10px;
 `;
 
 const CategoryTitleContainer = styled.View`
@@ -79,7 +85,6 @@ const CategoryTitle = styled.Text`
 
 const ProductsContainer = styled.View`
   flex-wrap: wrap;
-  padding: 5% 2.5%;
+  padding: 10px 2% 5%;
   flex-direction: row;
-  justify-content: space-evenly;
 `;

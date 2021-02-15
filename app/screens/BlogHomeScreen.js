@@ -25,8 +25,7 @@ export default function BlogHomeScreen({ navigation }) {
       <TopBar
         isShoopingScreen={false}
         onPressSearch={() => alert("Press Search")}
-        categoriesArray={blogCategories}
-        onPressCategory={() => alert("Press category")}
+        arrayCategories={blogCategories}
       />
       <ScrollViewItems>
         {blogPosts

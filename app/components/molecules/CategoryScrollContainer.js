@@ -1,19 +1,23 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 
 // Component
 import CategoryButton from "../atoms/CategoryButton";
 
-export default function CategoryScrollContainer({
-  categoriesArray,
-  onPressCategory,
-}) {
+export default function CategoryScrollContainer({ arrayCategories }) {
+  const navigation = useNavigation();
+
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      {categoriesArray.map((category) => (
+      {arrayCategories.map((category) => (
         <CategoryButton
           key={category}
-          onPressCategory={onPressCategory}
+          onPressCategory={() =>
+            navigation.navigate("ShoppingProductCategorie", {
+              selectedCategorie: category,
+            })
+          }
           name={category}
         />
       ))}

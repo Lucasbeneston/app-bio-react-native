@@ -52,7 +52,7 @@ const Container = styled.TouchableOpacity`
   border-radius: 10px;
   background-color: ${colors.BluePorcelain};
   ${(props) =>
-    props.isInCategoryScreen ? "margin-bottom: 15px" : "margin-right: 15px"};
+    props.isInCategoryScreen ? "margin: 0 2.5% 5%" : "margin-right: 15px"};
 `;
 const IllustrationContainer = styled.View`
   width: 175px;
