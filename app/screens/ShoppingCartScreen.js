@@ -10,10 +10,10 @@ import { CartContext } from "../context/CartContext";
 // Components
 import RondedButton from "../components/atoms/RondedButton";
 import EmptySectionSVG from "../components/atoms/EmptySectionSVG";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function ShoppingCartScreen({ navigation }) {
   const { cartItems, removeItem } = useContext(CartContext);
-  console.log(cartItems);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -36,47 +36,53 @@ export default function ShoppingCartScreen({ navigation }) {
           </EmptyCartSubTitle>
         </EmptyCartContainer>
       ) : (
-        <DetailsCart>
-          {cartItems.map((item) => (
-            <ItemContainer key={item.name}>
-              <ItemIllustrationContainer>
-                <ItemIllustration source={item.illustration} />
-              </ItemIllustrationContainer>
-              <ItemInformationsAndQuantityContainer>
-                <ItemInformationsContainer>
-                  <ItemDescriptionContainer>
-                    <ItemBrand>{item.brand}</ItemBrand>
-                    <ItemName numberOfLines={1}>{item.name}</ItemName>
-                    <Text>{item.quantity}</Text>
-                  </ItemDescriptionContainer>
-                  <ItemPriceContainer>
-                    <ItemPrice>{item.standardPrice}</ItemPrice>
-                  </ItemPriceContainer>
-                </ItemInformationsContainer>
-                <ItemQuantityContainer>
-                  <ChangeQuantityContainer>
-                    <ChangeQuantityButton>
-                      <Ionicons name="remove-outline" size={20} color="black" />
-                    </ChangeQuantityButton>
-                    <QuantityValueContainer>
-                      <QuantityValue>1</QuantityValue>
-                    </QuantityValueContainer>
-                    <ChangeQuantityButton>
-                      <Ionicons name="add-outline" size={20} color="black" />
-                    </ChangeQuantityButton>
-                  </ChangeQuantityContainer>
-                  <RemoveItemContainer
-                    onPress={() => {
-                      removeItem(item);
-                    }}
-                  >
-                    <Ionicons name="trash-outline" size={20} color="white" />
-                  </RemoveItemContainer>
-                </ItemQuantityContainer>
-              </ItemInformationsAndQuantityContainer>
-            </ItemContainer>
-          ))}
-        </DetailsCart>
+        <ScrollView>
+          <DetailsCart>
+            {cartItems.map((item) => (
+              <ItemContainer key={item.name}>
+                <ItemIllustrationContainer>
+                  <ItemIllustration source={item.illustration} />
+                </ItemIllustrationContainer>
+                <ItemInformationsAndQuantityContainer>
+                  <ItemInformationsContainer>
+                    <ItemDescriptionContainer>
+                      <ItemBrand>{item.brand}</ItemBrand>
+                      <ItemName numberOfLines={1}>{item.name}</ItemName>
+                      <Text>{item.quantity}</Text>
+                    </ItemDescriptionContainer>
+                    <ItemPriceContainer>
+                      <ItemPrice>{item.standardPrice}</ItemPrice>
+                    </ItemPriceContainer>
+                  </ItemInformationsContainer>
+                  <ItemQuantityContainer>
+                    <ChangeQuantityContainer>
+                      <ChangeQuantityButton>
+                        <Ionicons
+                          name="remove-outline"
+                          size={20}
+                          color="black"
+                        />
+                      </ChangeQuantityButton>
+                      <QuantityValueContainer>
+                        <QuantityValue>1</QuantityValue>
+                      </QuantityValueContainer>
+                      <ChangeQuantityButton>
+                        <Ionicons name="add-outline" size={20} color="black" />
+                      </ChangeQuantityButton>
+                    </ChangeQuantityContainer>
+                    <RemoveItemContainer
+                      onPress={() => {
+                        removeItem(item);
+                      }}
+                    >
+                      <Ionicons name="trash-outline" size={20} color="white" />
+                    </RemoveItemContainer>
+                  </ItemQuantityContainer>
+                </ItemInformationsAndQuantityContainer>
+              </ItemContainer>
+            ))}
+          </DetailsCart>
+        </ScrollView>
       )}
       <BottomContainer>
         {Object.keys(cartItems).length === 0 ? (
@@ -142,7 +148,7 @@ const EmptyCartSubTitle = styled.Text`
 
 // DetailsCart
 const DetailsCart = styled.View`
-  padding: 5%;
+  padding: 5% 5% 100px;
 `;
 
 // Item container
