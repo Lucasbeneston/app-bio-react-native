@@ -22,7 +22,7 @@ const CardItem = styled.View`
   width: ${ITEM_WIDTH}px;
   padding: 30px;
   flex: 1;
-  background-color: white;
+  background-color: ${colors.OffWhite};
   align-items: center;
   justify-content: center;
   border-radius: 20px;

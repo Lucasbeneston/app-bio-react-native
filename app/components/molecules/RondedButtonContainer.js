@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
@@ -22,7 +23,7 @@ export default function RondedButtonContainer({
     <ButtonContainer open={open}>
       <RondedButton onPress={onPressMenu} ioniconName={menuIconName} />
       {isShoopingScreen ? (
-        <InputSearchContainer>
+        <View>
           <RondedButton
             marginLeft="10px"
             onPress={() => {
@@ -30,12 +31,12 @@ export default function RondedButtonContainer({
             }}
             ioniconName="cart-outline"
           />
-          {Object.keys(cartItems).length > 0 ? (
+          {cartItems.length > 0 ? (
             <CountItemsContainer>
               <CountItemsValue>{cartItems.length}</CountItemsValue>
             </CountItemsContainer>
           ) : null}
-        </InputSearchContainer>
+        </View>
       ) : null}
       <RondedButton
         marginLeft="10px"
@@ -64,8 +65,6 @@ const InputSearch = styled.TextInput`
   z-index: -1;
   padding-left: ${(props) => (props.open ? "45px" : "0px")};
 `;
-
-const InputSearchContainer = styled.View``;
 const CountItemsContainer = styled.View`
   height: 18px;
   width: 18px;
@@ -79,5 +78,5 @@ const CountItemsContainer = styled.View`
 const CountItemsValue = styled.Text`
   font-size: 10px;
   font-weight: 600;
-  color: white;
+  color: ${colors.OffWhite};
 `;

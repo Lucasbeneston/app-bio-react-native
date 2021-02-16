@@ -74,6 +74,6 @@ const PostCategoryContainer = styled.View`
 `;
 const PostCategory = styled.Text`
   font-size: 16px;
-  color: white;
+  color: ${colors.OffWhite};
   font-weight: 500;
 `;

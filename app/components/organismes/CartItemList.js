@@ -31,13 +31,21 @@ export default function CartItemList({ contextData }) {
               <QuantityContainer>
                 <ChangeQuantityContainer>
                   <ChangeQuantityButton>
-                    <Ionicons name="remove-outline" size={20} color="black" />
+                    <Ionicons
+                      name="remove-outline"
+                      size={20}
+                      color={colors.Black}
+                    />
                   </ChangeQuantityButton>
                   <QuantityValueContainer>
                     <QuantityValue>1</QuantityValue>
                   </QuantityValueContainer>
                   <ChangeQuantityButton>
-                    <Ionicons name="add-outline" size={20} color="black" />
+                    <Ionicons
+                      name="add-outline"
+                      size={20}
+                      color={colors.Black}
+                    />
                   </ChangeQuantityButton>
                 </ChangeQuantityContainer>
                 <RemoveItemContainer
@@ -45,7 +53,11 @@ export default function CartItemList({ contextData }) {
                     removeItem(item);
                   }}
                 >
-                  <Ionicons name="trash-outline" size={20} color="white" />
+                  <Ionicons
+                    name="trash-outline"
+                    size={20}
+                    color={colors.OffWhite}
+                  />
                 </RemoveItemContainer>
               </QuantityContainer>
             </InformationsAndQuantityContainer>
@@ -56,7 +68,7 @@ export default function CartItemList({ contextData }) {
   );
 }
 
-// Style
+// Styles
 const DetailsCart = styled.View`
   padding: 5% 5% 100px;
 `;

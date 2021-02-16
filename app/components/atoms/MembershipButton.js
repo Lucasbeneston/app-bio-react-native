@@ -6,7 +6,7 @@ import colors from "../../config/colors";
 export default function MembershipButton() {
   return (
     <Container>
-      <Ionicons name="person-add-outline" size={34} color="white" />
+      <Ionicons name="person-add-outline" size={34} color={colors.OffWhite} />
       <Label>Adhésion</Label>
     </Container>
   );
@@ -23,5 +23,5 @@ const Container = styled.View`
 
 const Label = styled.Text`
   font-size: 10px;
-  color: white;
+  color: ${colors.OffWhite};
 `;

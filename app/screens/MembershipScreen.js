@@ -44,7 +44,7 @@ const Title = styled.Text`
   font-size: 20px;
   font-weight: 700;
   margin-top: 10px;
-  color: white;
+  color: ${colors.OffWhite};
 `;
 const SliderContainer = styled.View`
   background-color: ${colors.BlueKazidomi};
@@ -72,6 +72,6 @@ const SubscribeButton = styled.TouchableOpacity`
 `;
 const SubscribeButtonTitle = styled.Text`
   text-transform: uppercase;
-  color: white;
+  color: ${colors.OffWhite};
   font-weight: 600;
 `;

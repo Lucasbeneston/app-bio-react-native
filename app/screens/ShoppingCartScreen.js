@@ -13,7 +13,6 @@ import CartEmptyInformations from "../components/molecules/CartEmptyInformations
 
 export default function ShoppingCartScreen({ navigation }) {
   const { cartItems } = useContext(CartContext);
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header>
@@ -26,13 +25,13 @@ export default function ShoppingCartScreen({ navigation }) {
         </CategoryTitleContainer>
       </Header>
 
-      {Object.keys(cartItems).length === 0 ? (
+      {cartItems.length === 0 ? (
         <CartEmptyInformations />
       ) : (
         <CartItemList contextData={cartItems} />
       )}
       <BottomContainer>
-        {Object.keys(cartItems).length === 0 ? (
+        {cartItems.length === 0 ? (
           <Button
             activeOpacity={0.7}
             onPress={() => navigation.navigate("ShoppingHomeScreen")}
@@ -88,6 +87,6 @@ const Button = styled.TouchableOpacity`
 `;
 const ButtonTitle = styled.Text`
   text-transform: uppercase;
-  color: white;
+  color: ${colors.OffWhite};
   font-weight: 600;
 `;

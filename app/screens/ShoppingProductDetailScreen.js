@@ -171,13 +171,13 @@ const AddAndQuantityContainer = styled.View`
 const InputNumberContainer = styled.View`
   align-self: flex-start;
   flex-direction: row;
-  background-color: white;
+  background-color: ${colors.OffWhite};
   border-radius: 30px;
 `;
 const InputNumberValue = styled.View`
   height: 50px;
   width: 50px;
-  background-color: white;
+  background-color: ${colors.OffWhite};
   border-radius: 30px;
   position: absolute;
   left: 45px;
@@ -213,7 +213,7 @@ const InputNumberMore = styled.TouchableOpacity`
 const SignMoreLess = styled.Text`
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: ${colors.OffWhite};
 `;
 const AddToCartButton = styled.TouchableOpacity`
   height: 60px;
@@ -225,7 +225,7 @@ const AddToCartButton = styled.TouchableOpacity`
 `;
 const AddToCartTitle = styled.Text`
   text-transform: uppercase;
-  color: white;
+  color: ${colors.OffWhite};
   font-weight: 600;
 `;
 const ScrollViewInformation = styled.ScrollView`

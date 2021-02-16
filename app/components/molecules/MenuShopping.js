@@ -74,5 +74,5 @@ const Button = styled.TouchableOpacity`
 const ButtonTitle = styled.Text`
   text-transform: uppercase;
   font-weight: 600;
-  color: white;
+  color: ${colors.OffWhite};
 `;

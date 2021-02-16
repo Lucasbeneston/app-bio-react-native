@@ -54,7 +54,7 @@ const PostCategoryContainer = styled.View`
 `;
 const PostCategory = styled.Text`
   font-size: 14px;
-  color: white;
+  color: ${colors.OffWhite};
   font-weight: 500;
 `;
 const InformationContainer = styled.View`

@@ -123,7 +123,7 @@ const TypePrice = styled.Text`
 const ValuePrice = styled.Text`
   font-size: ${(props) => (props.member ? "14px" : "16px")};
   font-weight: 600;
-  color: ${(props) => (props.member ? colors.BurningOrange : "black")};
+  color: ${(props) => (props.member ? colors.BurningOrange : colors.Black)};
 `;
 const ButtonAdd = styled.TouchableOpacity`
   height: 40px;
@@ -134,5 +134,5 @@ const ButtonAdd = styled.TouchableOpacity`
 `;
 const ButtonAddTitle = styled.Text`
   font-weight: 600;
-  color: white;
+  color: ${colors.OffWhite};
 `;

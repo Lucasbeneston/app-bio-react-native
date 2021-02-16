@@ -6,7 +6,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 export default function RondedButton({ onPress, ioniconName, marginLeft }) {
   return (
     <Button marginLeft={marginLeft} onPress={onPress}>
-      <Ionicons name={ioniconName} size={20} color="white" />
+      <Ionicons name={ioniconName} size={20} color={colors.OffWhite} />
     </Button>
   );
 }
