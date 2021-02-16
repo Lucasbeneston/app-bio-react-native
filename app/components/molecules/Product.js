@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components/native";
 import colors from "../../config/colors";
+import { CartContext } from "../../context/CartContext";
 
 export default function Product({
   isInCategoryScreen,
@@ -12,6 +13,8 @@ export default function Product({
   standardPrice,
   memberPrice,
 }) {
+  const { addItem } = useContext(CartContext);
+
   return (
     <Container
       activeOpacity={0.8}
@@ -36,7 +39,18 @@ export default function Product({
               <ValuePrice member>{memberPrice}</ValuePrice>
             </Price>
           </PriceContainer>
-          <ButtonAdd>
+          <ButtonAdd
+            onPress={() => {
+              addItem({
+                illustration,
+                brand,
+                name,
+                quantity,
+                standardPrice,
+                memberPrice,
+              });
+            }}
+          >
             <ButtonAddTitle>Ajouter</ButtonAddTitle>
           </ButtonAdd>
         </PriceButtonAddContainer>

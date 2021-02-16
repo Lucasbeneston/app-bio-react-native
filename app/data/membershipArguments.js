@@ -3,7 +3,7 @@ export default data = [
     ionicon: "cash-outline",
     title: "Réductions jusqu'à 50%",
     description:
-      "Bénéficiez toute l'années de réductions allant de 20% jusqu'à 50% sur tout le catalogue du site.",
+      "Bénéficiez toute l'année de réductions allant de 20% jusqu'à 50% sur tout le catalogue du site.",
   },
   {
     ionicon: "gift-outline",

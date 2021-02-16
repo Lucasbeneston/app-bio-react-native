@@ -6,7 +6,7 @@ export default [
     illustration: require("../assets/products/pates-d-epeautre-aux-superfoods-en-vrac-bio.png"),
     brand: "Kazidomi",
     name: "Pâtes D'Épeautre Aux Superfoods en vrac Bio",
-    quantity: "500 g",
+    quantity: "500g",
     standardPrice: "6,62€",
     memberPrice: "4,63€",
     ingredients: [
@@ -47,7 +47,7 @@ export default [
     illustration: require("../assets/products/gaia-faux-gras-125g.png"),
     brand: "Gaia",
     name: "Faux Gras Bio",
-    quantity: "125 g",
+    quantity: "125g",
     standardPrice: "4,18€",
     memberPrice: "3,34€",
     ingredients: [
