@@ -36,7 +36,8 @@ export default function BlogPostCategory({ route, navigation }) {
                 Oups ! Cette section est vide
               </EmptySectionAlertOops>
               <EmptySectionAlertInformations>
-                Nous allons prochainement la remplir de bons produits healthy
+                Nous allons prochainement écrire de nouveaux articles sur ce
+                thème.
               </EmptySectionAlertInformations>
             </EmptySectionAlert>
           ) : (
