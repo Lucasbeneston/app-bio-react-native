@@ -4,6 +4,7 @@ import styled from "styled-components";
 import colors from "../../config/colors";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+// CartContext
 import { CartContext } from "../../context/CartContext";
 
 export default function CartItemList({ contextData }) {

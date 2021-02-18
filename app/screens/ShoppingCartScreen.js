@@ -13,6 +13,7 @@ import CartEmptyInformations from "../components/molecules/CartEmptyInformations
 
 export default function ShoppingCartScreen({ navigation }) {
   const { cartItems } = useContext(CartContext);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header>
@@ -30,6 +31,7 @@ export default function ShoppingCartScreen({ navigation }) {
       ) : (
         <CartItemList contextData={cartItems} />
       )}
+
       <BottomContainer>
         {cartItems.length === 0 ? (
           <Button
